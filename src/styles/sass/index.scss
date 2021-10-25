@@ -1,0 +1,14 @@
+@import 'lib/variables';
+@import 'lib/mixin';
+@import 'lib/media';
+@import 'lib/animation';
+
+body {
+  @include media-min-width(1200px) {
+    @include animation(3s, infinite) {
+      from { background-color: yellow }
+      to { background-color: red }
+    }
+  }
+}
+

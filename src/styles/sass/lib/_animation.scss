@@ -1,0 +1,11 @@
+@mixin animation($duration, $iteration) {
+  $name: animation-#{unique-id()};
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+}

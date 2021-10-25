@@ -1,0 +1,17 @@
+@media only screen and (min-width: 1200px) {
+  body {
+    animation-name: animation-umjffaj;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes animation-umjffaj {
+    from {
+      background-color: yellow;
+    }
+    to {
+      background-color: red;
+    }
+  }
+}
+
+/*# sourceMappingURL=index.css.map */

@@ -6,10 +6,11 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
+    "sass": "sass --watch src/styles/sass:src/styles/css",
     "test": "karma start"
   },
   "keywords": [],
-  "author": "your_name <your.email@domain.com>",
+  "author": "Sabiq Muhammad sabiqmuhammad98@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.5",
@@ -27,6 +28,8 @@
     "karma-jasmine": "^3.3.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^4.0.2",
+    "sass": "^1.22.10",
+    "sass-loader": "^7.2.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12",
