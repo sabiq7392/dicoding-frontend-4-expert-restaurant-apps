@@ -1,0 +1,12 @@
+#appBar {
+  nav {
+    @include flex-horizontal-between();
+    ul {
+      @include flex-horizontal-center();
+
+      li {
+        padding: 1rem;
+      }
+    }
+  }
+}

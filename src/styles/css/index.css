@@ -1,17 +1,18 @@
-@media only screen and (min-width: 1200px) {
-  body {
-    animation-name: animation-umjffaj;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-  }
-  @keyframes animation-umjffaj {
-    from {
-      background-color: yellow;
-    }
-    to {
-      background-color: red;
-    }
-  }
-}
+/* Error: There is no module with the namespace "map".
+ *   ,
+ * 2 |   background-color: map.get($theme-color);
+ *   |                     ^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   src\styles\sass\header\_app-bar.scss 2:21  @import
+ *   src\styles\sass\index.scss 9:9             root stylesheet */
 
-/*# sourceMappingURL=index.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: 'Error: There is no module with the namespace "map".\a   \2577 \a 2 \2502    background-color: map.get($theme-color);\d\a   \2502                      ^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   src\\styles\\sass\\header\\_app-bar.scss 2:21  @import\a   src\\styles\\sass\\index.scss 9:9             root stylesheet';
+}

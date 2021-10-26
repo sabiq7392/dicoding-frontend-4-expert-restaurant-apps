@@ -1,0 +1,36 @@
+@mixin flex-horizontal-between() {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin flex-horizontal-center() {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin place-center($display) {
+  display: $display;
+  @if $display == grid {
+    place-items: center;
+  }
+  @else if $display == flex {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin reset-tag-default-values() {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
