@@ -64,7 +64,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),
       filename: 'index.html',
-      favicon: 'src/public/images/logo/mame-icon.svg'
+      favicon: 'src/public/images/logo/ristorante-icon.svg'
     }),
     new CopyWebpackPlugin({
       patterns: [

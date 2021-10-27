@@ -1,4 +1,5 @@
-import logo from '../../../public/images/logo/mame-logo-food.svg';
+import logo from '../../../public/images/logo/ristorante-logo.svg';
+import { $ } from '../../lib/Mame.js';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
@@ -11,12 +12,12 @@ class AppBar extends HTMLElement {
         <a class="navbar-brand" href="index.html">
           <img src="${logo}" alt="mame food">
         </a>
-        <button aria-label="menu" class="d-none" type="button">
+        <button id="menuButton" aria-label="menu"  type="button">
           <i class="bi bi-list"></i>
         </button>
         <ul>
           <li>
-            <a href="index.html">
+            <a href="index.html" class="active">
               Home
             </a>
           </li>
@@ -31,7 +32,18 @@ class AppBar extends HTMLElement {
         </ul>
       </nav>
     `;
+
+    this.#button();
   }
+
+  #button() {
+    const button = $('#menuButton');
+
+    $(button).onClick(() => {
+      
+    });
+  }
+
 }
 
 customElements.define('app-bar', AppBar);

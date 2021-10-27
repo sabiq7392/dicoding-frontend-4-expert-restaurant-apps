@@ -1,5 +1,8 @@
 // ---------- Colors ----------
-$theme-color-primary: #00A8CC;
+$theme-color-primary: #FF893B;
+$theme-color-dark: #333333;
+$theme-color-active: $theme-color-primary;
+$theme-color-not-active: #C4C4C4;
 
 // ---------- Fonts -----------
 $font-primary: 'Nunito Sans', sans-serif;
@@ -8,6 +11,8 @@ $font-title: 'Poppins', sans-serif;
 // ---------- Gutters ----------
 $padding-small: .5rem;
 $padding-medium: 1rem;
+
+$gap-small: $padding-small;
 
 // ---------- Shadow -----------
 $shadow-default: rgba(0, 0, 0, 0.10) 0px 1px 8px;

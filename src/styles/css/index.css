@@ -3,12 +3,18 @@
   display: none;
 }
 
-@media only screen and (min-width: 1400px) {
-  .container {
-    max-width: 1320px;
-  }
+.container {
+  max-width: 70%;
 }
 
+/*
+  Mame.scss
+  Make your code simple, readble and easy to maintain
+
+  Author: Sabiq Muhammad Antebing Mame;
+  Contact: sabiqmuhammad98@gmail.com;
+  Github: sabiq7392;
+*/
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -23,6 +29,11 @@ ul {
   list-style-type: none;
 }
 
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
 body {
   font-family: "Nunito Sans", sans-serif;
   background-color: #f5f5f5;
@@ -32,27 +43,65 @@ body {
   display: block;
   position: sticky;
   top: 0;
-  width: 100vw;
-  background-color: white;
+  background-color: #333333;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 8px;
 }
 #appBar nav {
   display: flex;
   justify-content: space-between;
-  max-width: 70%;
   margin: auto;
+  max-width: 70%;
+  padding: 0.5rem;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav {
+    max-width: 100% !important;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav {
+    padding: 0 0.5rem;
+  }
 }
 #appBar nav .navbar-brand,
-#appBar nav li > a {
+#appBar nav ul > li > a {
   padding: 0.5rem;
 }
 #appBar nav .navbar-brand img {
   width: 10rem;
 }
+#appBar nav button {
+  display: none;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav button {
+    display: block;
+  }
+}
 #appBar nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: inherit;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav ul {
+    display: none;
+  }
+}
+#appBar nav ul li a {
+  color: #C4C4C4;
+}
+#appBar nav ul li a.active {
+  color: #FF893B;
+  font-weight: bold;
+}
+
+#hero {
+  min-width: 100vw;
+}
+#hero img {
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -1,14 +1,17 @@
 #appBar {
-  @include custom-tag-default-values();
+  @include styles-default-add-custom-tag();
   @include navbar-sticky-top();
-  background-color: white;
+  background-color: $theme-color-dark;
   box-shadow: $shadow-default;
   nav {
     @include flex-horizontal-between();
     @include container();
-    margin: auto;
+    padding: $padding-small;
+    @include media('phone') {
+      padding: 0 $padding-small;
+    }
     .navbar-brand, 
-    li > a {
+    ul > li > a {
       padding: $padding-small;
     }
     
@@ -17,9 +20,35 @@
         width: 10rem;
       }
     }
+
+    button {
+      display: none;
+      @include media('phone') {
+        display: block;
+      }
+    }
     
     ul {
       @include place-center(flex);
+      background-color: inherit;
+      @include media('phone') {
+        display: none;
+      }
+      // @include media('phone') {
+      //   display: grid;
+      //   gap: $gap-small;
+      //   position: fixed;
+      //   top: 0;
+      //   right: 0;
+      // }
+      li {
+        a {
+          color: $theme-color-not-active;
+        }
+        a.active {
+          @include link-active();
+        }
+      }
     }
   }
 }

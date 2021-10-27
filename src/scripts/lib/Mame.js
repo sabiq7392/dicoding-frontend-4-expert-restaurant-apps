@@ -4,14 +4,6 @@ import { Style } from './_Style.js';
 import { Media } from './_Media.js';
 import { isObject } from './_Type.js';
 
-// export function $query(element) {
-//   const isID = element.includes('#');
-//   if (isID) {
-//     return document.querySelector(element);
-//   }
-//   return document.querySelectorAll(element);
-// }
-
 export function $(element) {
   const anElement = { element };
 
@@ -30,3 +22,12 @@ export function $(element) {
     ...Media(anElement),
   };
 }
+
+/*
+  Mame.js 
+  Make your code simple, readble and easy to maintain
+
+  Author: Sabiq Muhammad Antebing Mame;
+  Contact: sabiqmuhammad98@gmail.com;
+  Github: sabiq7392;
+*/
