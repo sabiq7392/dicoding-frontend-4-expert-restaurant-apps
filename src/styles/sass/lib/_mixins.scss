@@ -1,3 +1,15 @@
+@mixin container() {
+  max-width: 70%;
+}
+
+@mixin container-fluid() {
+  max-width: 100%;
+}
+
+@mixin custom-tag-default-values() {
+  display: block;
+}
+
 @mixin flex-horizontal-between() {
   display: flex;
   justify-content: space-between;
@@ -6,6 +18,17 @@
 @mixin flex-horizontal-center() {
   display: flex;
   justify-content: center;
+}
+
+@mixin navbar-fixed-top() {
+  position: fixed;
+  width: 100%;
+}
+
+@mixin navbar-sticky-top() {
+  position: sticky;
+  top: 0;
+  width: 100vw;
 }
 
 @mixin place-center($display) {
@@ -20,17 +43,17 @@
 }
 
 @mixin reset-tag-default-values() {
-  * {
+  *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  ul {
-    list-style-type: none;
-  }
-
   a {
     text-decoration: none;
+  }
+
+  ul {
+    list-style-type: none;
   }
 }

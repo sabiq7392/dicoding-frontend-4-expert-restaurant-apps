@@ -1,14 +1,20 @@
 #appBar {
+  @include custom-tag-default-values();
+  @include navbar-sticky-top();
+  background-color: white;
+  box-shadow: $shadow-default;
   nav {
     @include flex-horizontal-between();
+    @include container();
+    margin: auto;
     .navbar-brand, 
     li > a {
-      padding: $padding-medium;
+      padding: $padding-small;
     }
     
     .navbar-brand {
       img {
-        width: 5rem;
+        width: 10rem;
       }
     }
     

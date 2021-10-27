@@ -1,31 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 .d-none {
   display: none;
 }
 
-* {
+@media only screen and (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-ul {
-  list-style-type: none;
 }
 
 a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f5f5f5;
+}
+
+#appBar {
+  display: block;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 8px;
+}
 #appBar nav {
   display: flex;
   justify-content: space-between;
+  max-width: 70%;
+  margin: auto;
 }
 #appBar nav .navbar-brand,
 #appBar nav li > a {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 #appBar nav .navbar-brand img {
-  width: 5rem;
+  width: 10rem;
 }
 #appBar nav ul {
   display: flex;
