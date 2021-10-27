@@ -1,0 +1,19 @@
+#appBar {
+  nav {
+    @include flex-horizontal-between();
+    .navbar-brand, 
+    li > a {
+      padding: $padding-medium;
+    }
+    
+    .navbar-brand {
+      img {
+        width: 5rem;
+      }
+    }
+    
+    ul {
+      @include place-center(flex);
+    }
+  }
+}

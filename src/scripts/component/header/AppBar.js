@@ -1,17 +1,17 @@
-import logo from '../../public/images/logo/mame-logo-food.svg';
+import logo from '../../../public/images/logo/mame-logo-food.svg';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
-    this.render();
+    this.#render();
   }
 
-  render() {
+  #render() {
     this.innerHTML = `
       <nav>
         <a class="navbar-brand" href="index.html">
           <img src="${logo}" alt="mame food">
         </a>
-        <button class="d-none" type="button">
+        <button aria-label="menu" class="d-none" type="button">
           <i class="bi bi-list"></i>
         </button>
         <ul>
@@ -29,7 +29,6 @@ class AppBar extends HTMLElement {
             </a>
           </li>
         </ul>
-
       </nav>
     `;
   }
