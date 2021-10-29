@@ -2,14 +2,78 @@
 
 @mixin container() {
   margin: auto;
-  max-width: 70%;
-  @include media('phone') {
-    max-width: 100%!important;
+  width: 100%;
+  @include media('small') {
+    max-width: 100%;
+  }
+  @include media('medium') {
+    max-width: 720px;
+  }
+  @include media('large') {
+    max-width: 960px;
+  }
+  @include media('x-large') {
+    max-width: 1140px;
+  }
+  @include media('xx-large') {
+    max-width: 1320px;
   }
 }
 
 @mixin container-fluid() {
   max-width: 100%;
+}
+
+@mixin grid-three-two-one() {
+  grid-template-columns: repeat(3, 1fr);
+  @include media('tablet') {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include media('phone') {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin link-active() {
+  color: $theme-color-active;
+  font-weight: bold;
+}
+
+@mixin navbar-top-fixed() {
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+@mixin navbar-top-sticky() {
+  position: sticky;
+  top: 0;
+}
+
+@mixin place-center($display) {
+  display: $display;
+  @if $display == grid {
+    place-items: center;
+  }
+  @else if $display == flex {
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@mixin place-vertical-center($display) {
+  display: $display;
+  align-items: center;
+}
+
+@mixin place-horizontal-between($display) {
+  display: $display;
+  justify-content: space-between;
+}
+
+@mixin place-horizontal-center($display) {
+  display: $display;
+  justify-content: center;
 }
 
 @mixin styles-default-add-custom-tag() {
@@ -29,6 +93,8 @@
 
   ul {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
 
   button {
@@ -36,42 +102,4 @@
     border: none;
   }
 }
-
-@mixin flex-horizontal-between() {
-  display: flex;
-  justify-content: space-between;
-}
-
-@mixin flex-horizontal-center() {
-  display: flex;
-  justify-content: center;
-}
-
-@mixin link-active() {
-  color: $theme-color-active;
-  font-weight: bold;
-}
-
-@mixin navbar-fixed-top() {
-  position: fixed;
-  width: 100%;
-}
-
-@mixin navbar-sticky-top() {
-  position: sticky;
-  top: 0;
-}
-
-@mixin place-center($display) {
-  display: $display;
-  @if $display == grid {
-    place-items: center;
-  }
-  @else if $display == flex {
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-
 

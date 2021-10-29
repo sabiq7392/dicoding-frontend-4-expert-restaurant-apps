@@ -1,8 +1,20 @@
+// ---------- Borders ---------
+$border-radius-container: 5px;
+$border-radius-card-image: 10px;
+// ---------- Background ------
+
 // ---------- Colors ----------
+$theme-color-active: #FF893B;
+$theme-color-active-not: #C4C4C4;
+$theme-color-dark: #222;
+$theme-color-dark-hover: #555;
+$theme-color-dark-text-title: #444;
+$theme-color-dark-text-paragraf: #222;
+$theme-color-light-text: #fff;
+$theme-color-light: #F2F2F2;
 $theme-color-primary: #FF893B;
-$theme-color-dark: #333333;
-$theme-color-active: $theme-color-primary;
-$theme-color-not-active: #C4C4C4;
+
+$color-transparent: rgba(0,0,0,0);
 
 // ---------- Fonts -----------
 $font-primary: 'Nunito Sans', sans-serif;
@@ -11,14 +23,21 @@ $font-title: 'Poppins', sans-serif;
 // ---------- Gutters ----------
 $padding-small: .5rem;
 $padding-medium: 1rem;
+$padding-large: 1.5rem;
 
 $gap-small: $padding-small;
+$gap-medium: $padding-medium;
+$gap-large: $padding-large;
+$gap-card: 3rem;
 
 // ---------- Shadow -----------
-$shadow-default: rgba(0, 0, 0, 0.10) 0px 1px 8px;
+$shadow-default: rgba(0, 0, 0, .2) 0px 1px 8px;
+$shadow-card: rgba($theme-color-dark, .09) 0px 0px 10px;
 
+// ---------- Transition/Speed -
+$speed-fast: 250ms;
+$speed-normal: 500ms;
 
-// ---------- Container --------
-
-
+// ---------- Width --------
+$size-standard-button-link: 44px;
 

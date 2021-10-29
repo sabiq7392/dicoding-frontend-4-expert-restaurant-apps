@@ -42,6 +42,10 @@ export function Event({ element }) {
       add('resize', listener, options);
       return this;
     },
+    onScroll(listener, options) {
+      add('scroll', listener, options);
+      return this;
+    },
     onSubmit(listener, options) {
       add('submit', listener, options);
       return this;

@@ -1,0 +1,9 @@
+#exploreRestaurants {
+  @include container();
+  display: grid;
+  row-gap: $gap-medium;
+  
+  h1 {
+    text-align: center;
+  }
+}
