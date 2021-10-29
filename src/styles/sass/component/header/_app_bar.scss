@@ -1,12 +1,7 @@
 #appBar {
   @include styles-default-add-custom-tag();
-  @include navbar-top-fixed();
-
-  // background-color: $theme-color-dark;
   background-color: rgba($theme-color-dark, 0.5);
-  box-shadow: $shadow-default;
   transition: $speed-normal;
-  z-index: 1;
   nav {
     @include place-horizontal-between(flex);
     @include container();
@@ -45,7 +40,7 @@
         $height-app-bar: 70px;
 
         display: grid;
-        gap: $gap-medium;
+        gap: $gap-list-link;
 
         position: fixed;
         top: $height-app-bar;
@@ -54,7 +49,8 @@
         box-shadow: $shadow-default;
         background-color: $theme-color-dark;
 
-        border-radius: $border-radius-container;
+        border-top-left-radius: $border-radius-container;
+        border-bottom-left-radius: $border-radius-container;
         li {
           a {
             width: 200px;
@@ -90,7 +86,7 @@
           &.active {
             @include link-active();
           }
-          &:hover {
+          &:hover, &:focus {
             background-color: $theme-color-dark-hover;
           }
         }

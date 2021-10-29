@@ -1,0 +1,17 @@
+#author {
+  ul {
+    @include place-center(flex);
+    gap: $gap-list-link;
+    li {
+      a {
+        color: $theme-color-light;
+        @include media('phone') {
+          font-size: 12px;
+        }
+        &:hover {
+          color: $theme-color-primary;
+        }
+      }
+    }
+  }
+}

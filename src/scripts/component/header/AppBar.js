@@ -1,5 +1,6 @@
 import logo from '../../../public/images/logo/ristorante-logo.svg';
 import { $ } from '../../lib/Mame.js';
+import Menu from '../header/Menu.js';
 'use strict';
 
 class AppBar extends HTMLElement {
@@ -34,7 +35,24 @@ class AppBar extends HTMLElement {
       </nav>
     `;
 
-    this.#menu();
+    const menu = new Menu().run();
+
+    // const menuButton = $('#menuButton');
+    // const menuContainer = $('#menuContainer');
+    // const isActive = $(menuContainer).containClass(['active']);
+
+    // $(menuButton).onClick(() => {
+    //   if (isActive) {
+    //     menu.hide();
+    //     console.log('not')
+    //   } else if(!isActive) {
+    //     menu.show();
+    //     console.log('hai')
+    //   }
+    // });
+    
+    // menu.run();
+    // this.#menu();  
     this.#changeColor();
   }
 
@@ -64,9 +82,6 @@ class AppBar extends HTMLElement {
     
     $(button).onClick(function() {
       showHide();
-      $(this).css({ 
-        transform: 'rotate(180deg)'
-      })
     });
 
     const hideWhenNotPhoneScreen = () => {
@@ -89,19 +104,13 @@ class AppBar extends HTMLElement {
       if (document.body.scrollTop > height || document.documentElement.scrollTop > height) {
         $(appBar).css({
           backgroundColor: '#222'
-        })
+        });
       } else {
         $(appBar).css({
-          backgroundColor: 'rgba($theme-color-dark, 0.5)'
-        })
+          backgroundColor: ''
+        });
       }
-
-      if (document.body.scrollTop) {
-        $(appBar).css({
-          backgroundColor: '#222'
-        })
-      }
-    })
+    });
   }
 }
 

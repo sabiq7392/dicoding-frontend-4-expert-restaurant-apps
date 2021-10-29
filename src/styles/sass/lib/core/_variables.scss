@@ -11,7 +11,7 @@ $theme-color-dark-hover: #555;
 $theme-color-dark-text-title: #444;
 $theme-color-dark-text-paragraf: #222;
 $theme-color-light-text: #fff;
-$theme-color-light: #F2F2F2;
+$theme-color-light: #f1f1f1;
 $theme-color-primary: #FF893B;
 
 $color-transparent: rgba(0,0,0,0);
@@ -24,11 +24,13 @@ $font-title: 'Poppins', sans-serif;
 $padding-small: .5rem;
 $padding-medium: 1rem;
 $padding-large: 1.5rem;
+$padding-container: 5rem;
 
 $gap-small: $padding-small;
 $gap-medium: $padding-medium;
 $gap-large: $padding-large;
 $gap-card: 3rem;
+$gap-list-link: $gap-medium;
 
 // ---------- Shadow -----------
 $shadow-default: rgba(0, 0, 0, .2) 0px 1px 8px;

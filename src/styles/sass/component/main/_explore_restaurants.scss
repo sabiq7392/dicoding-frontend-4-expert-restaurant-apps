@@ -2,8 +2,11 @@
   @include container();
   display: grid;
   row-gap: $gap-medium;
+  padding: $padding-container 0;
   
   h1 {
     text-align: center;
   }
 }
+
+@import 'restaurants';

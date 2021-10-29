@@ -1,5 +1,3 @@
-@import 'explore_restaurants';
-
 #containerRestaurants {
   display: grid;
   @include grid-three-two-one();
@@ -49,9 +47,9 @@
           }
         }
       }
-
+      
       p {
-        max-height: 300px;
+        max-height: 200px;
         padding: $padding-large;
 
         color: $theme-color-dark-text-paragraf;

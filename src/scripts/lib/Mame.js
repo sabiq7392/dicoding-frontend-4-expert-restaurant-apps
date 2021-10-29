@@ -1,8 +1,8 @@
-import { Event } from './_Event.js';
-import { ClassList } from './_ClassList.js';
-import { Style } from './_Style.js';
-import { Media } from './_Media.js';
-import { isObject } from './_Type.js';
+import { Event } from './core/_Event.js';
+import { ClassList } from './core/_ClassList.js';
+import { Style } from './core/_Style.js';
+import { Media } from './core/_Media.js';
+import { isObject } from './core/_Type.js';
 
 export function $(element) {
   const anElement = { element };

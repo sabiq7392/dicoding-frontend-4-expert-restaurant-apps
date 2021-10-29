@@ -1,0 +1,8 @@
+#header {
+  @include navbar-top-fixed();
+  z-index: 1;
+  box-shadow: $shadow-default;
+
+}
+
+@import 'app_bar';

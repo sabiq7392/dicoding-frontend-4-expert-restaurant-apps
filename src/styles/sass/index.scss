@@ -22,7 +22,7 @@ h1,h2,h3 {
   font-family: $font-title;
 }
 
-@import 'component/header/app_bar';
-@import 'component/main/hero';
-@import 'component/main/restaurants';
+@import 'component/header/header';
+@import 'component/main/main';
+@import 'component/footer/footer';
 
