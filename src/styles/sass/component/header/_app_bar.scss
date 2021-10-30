@@ -1,7 +1,7 @@
 #appBar {
   @include styles-default-add-custom-tag();
   background-color: rgba($theme-color-dark, 0.5);
-  transition: $speed-normal;
+  transition: background-color $speed-normal;
   nav {
     @include place-horizontal-between(flex);
     @include container();

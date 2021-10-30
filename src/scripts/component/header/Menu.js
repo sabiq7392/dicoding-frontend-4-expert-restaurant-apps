@@ -7,34 +7,34 @@ class Menu {
     this.container = $('#menuContainer');
   }
 
-  // run() {
-  //   const isActive = $(this.container).containClass(['active']);
-    
-  //   $(this.button).onClick(() => {
-  //     if (isActive) {
-  //       this.#hide();
-  //       console.log('not')
-  //     } else if(!isActive) {
-  //       this.#show()
-  //       console.log('hai')
-  //     }
-  //   })
-
-
-  //   this.#forceHide();
-  // }
-
   run() {
+    this.#button();
+    $(window).onResize(() => this.#forceHide());
+  }
+
+  #button() {
     $(this.button).onClick(() => {
       const isActive = $(this.container).containClass(['active']);
       if (!isActive) {
         this.#show();
-        console.log('yes')
+        changeIcon({ 
+          icon: '<i class="bi bi-x"></i>',
+          label: 'menu close'
+        });
       } else {
         this.#hide();
-        console.log('hai')
+        changeIcon({
+          icon: '<i class="bi bi-list"></i>',
+          label: 'menu open'
+        });
       }
     });
+
+    function changeIcon({ icon, label }) {
+      const button = $('#menuButton');
+      button.innerHTML = icon;
+      button.setAttribute('aria-label', label)
+    }
   }
 
   #show() {
@@ -55,8 +55,13 @@ class Menu {
       });
   }
 
-  forceHide() {
+  #forceHide() {
+    const phoneScreen = $(window).media('phone');
+    const isActive = $(this.container).containClass(['active']);
 
+    if (!phoneScreen.matches && isActive) {
+      $(this.container).removeClass(['active', 'show-animation']);
+    }
   }
 }
 

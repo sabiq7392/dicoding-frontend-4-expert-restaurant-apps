@@ -1,5 +1,5 @@
-import { $ } from '../../lib/Mame.js';
 import data from '../../../DATA.json';
+import { $ } from '../../lib/Mame.js';
 'use strict';
 
 class Restaurants extends HTMLElement {
@@ -18,10 +18,16 @@ class Restaurants extends HTMLElement {
             <header>
               <div>
                 <h2>${name}</h2>
-                <span aria-label="rating">
-                  <i class="bi bi-star-fill"></i> 
-                  ${rating} 
-                </span>
+                <div class="d-flex">
+                  <span aria-label="rating">
+                    <i class="bi bi-star-fill"></i> 
+                    ${rating} 
+                  </span>
+                  <button class="add-favorite" aria-label="add to favorite" type="button">
+                    <i class="bi bi-heart"></i> 
+                    Add to Favorite
+                  </button>
+                </div>
                 <address>${city}</address>
               </div>
             </header>
@@ -29,12 +35,38 @@ class Restaurants extends HTMLElement {
           </section>
         </article>
       `;
-    });
 
+      this.#button();
+    });
   }
 
-  #getRestaurants() {
+  #button() {
+    const buttons = $('.add-favorite');
+    const addedToFavorite = (button) => {
+      button.textContent.includes('Add to Favorite');
+    };
 
+    buttons.forEach((button) => {
+      $(button).onClick(() => {
+        !addedToFavorite ? cancel() : add();
+      });
+
+      function add() {
+        button.innerHTML = `
+          <i class="bi bi-heart-fill"></i> 
+          Added to Favorite
+        `;
+        $(button).css({ color: '#fd79a8' });
+      };
+
+      function cancel() {
+        button.innerHTML = `
+          <i class="bi bi-heart"></i> 
+          Add to Favorite
+        `;
+        $(button).css({ color: '' });
+      };
+    })
   }
 }
 

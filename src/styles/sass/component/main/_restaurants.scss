@@ -27,7 +27,7 @@
       background-color: rgba($theme-color-light, 0.8);
       transition: $speed-normal;
 
-      header {
+      header > {
         border-bottom: 1px solid gainsboro;
         div {
           padding: $padding-small $padding-large;
@@ -38,11 +38,26 @@
           h2 {
             font-weight: 600;
           }
-    
+
+          .d-flex {
+            gap: $gap-medium;
+            align-items: center;
+          }
+
           span[aria-label="rating"] {
             font-weight: bold;
             i {
               color: $theme-color-primary;
+            }
+          }
+
+          button {
+            @include place-center(flex);
+            gap: 4px;
+            font-size: .9rem;
+            transition: $speed-fast;
+            i {
+              font-size: 1.2rem;
             }
           }
         }
