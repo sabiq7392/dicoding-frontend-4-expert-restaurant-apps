@@ -17,9 +17,9 @@ class Restaurants extends HTMLElement {
           <section>
             <header>
               <div>
-                <h2>${name}</h2>
+                <h2 tabindex="0">${name}</h2>
                 <div class="d-flex">
-                  <span aria-label="rating">
+                  <span aria-label="rating" tabindex="0">
                     <i class="bi bi-star-fill"></i> 
                     ${rating} 
                   </span>
@@ -28,10 +28,10 @@ class Restaurants extends HTMLElement {
                     Add to Favorite
                   </button>
                 </div>
-                <address>${city}</address>
+                <address tabindex="0">${city}</address>
               </div>
             </header>
-            <p>${description}</p>
+            <p tabindex="0">${description}</p>
           </section>
         </article>
       `;
