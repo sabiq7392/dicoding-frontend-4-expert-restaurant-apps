@@ -167,11 +167,11 @@ h1, h2, h3 {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-uyo2f2n;
+  animation-name: animation-uggqhhq;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uyo2f2n {
+@keyframes animation-uggqhhq {
   from {
     right: -300px;
   }
@@ -180,11 +180,11 @@ h1, h2, h3 {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-uyo2f35;
+  animation-name: animation-uggqhhr;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uyo2f35 {
+@keyframes animation-uggqhhr {
   from {
     right: 0;
   }
