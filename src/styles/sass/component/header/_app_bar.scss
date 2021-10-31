@@ -82,12 +82,14 @@
           color: $theme-color-active-not;
           
           padding: $padding-small $padding-medium;
-          border-radius: $border-radius-container;
           &.active {
             @include link-active();
           }
           &:hover, &:focus {
-            background-color: $theme-color-dark-hover;
+            color: $theme-color-primary;
+            @include media('phone') {
+              background-color: $theme-color-dark-hover;
+            }
           }
         }
       }
