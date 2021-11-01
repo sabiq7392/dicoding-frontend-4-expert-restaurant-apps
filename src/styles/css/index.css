@@ -167,11 +167,11 @@ h1, h2, h3 {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-uggqhhq;
+  animation-name: animation-uem8ar7;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uggqhhq {
+@keyframes animation-uem8ar7 {
   from {
     right: -300px;
   }
@@ -180,11 +180,11 @@ h1, h2, h3 {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-uggqhhr;
+  animation-name: animation-uem8arj;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uggqhhr {
+@keyframes animation-uem8arj {
   from {
     right: 0;
   }
@@ -202,14 +202,18 @@ h1, h2, h3 {
   height: 44px;
   color: #C4C4C4;
   padding: 0.5rem 1rem;
-  border-radius: 5px;
 }
 #appBar nav ul li a.active {
   color: #FF893B;
   font-weight: bold;
 }
 #appBar nav ul li a:hover, #appBar nav ul li a:focus {
-  background-color: #555;
+  color: #FF893B;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav ul li a:hover, #appBar nav ul li a:focus {
+    background-color: #555;
+  }
 }
 
 #main #hero {
@@ -324,6 +328,9 @@ h1, h2, h3 {
 #main #containerRestaurants article section header > div button i {
   font-size: 1.2rem;
 }
+#main #containerRestaurants article section header > div button i.bi-heart-fill {
+  color: #fd79a8;
+}
 #main #containerRestaurants article section p {
   max-height: 200px;
   padding: 1.5rem;
@@ -333,8 +340,11 @@ h1, h2, h3 {
 }
 
 #footer {
+  display: grid;
+  place-items: center;
   background-color: #222;
   padding: 1rem;
+  margin-bottom: -5px;
 }
 
 #author ul {
