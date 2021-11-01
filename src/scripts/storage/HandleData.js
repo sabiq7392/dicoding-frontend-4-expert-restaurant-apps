@@ -1,24 +1,18 @@
-import STORAGE from "./storage.js";
 'use strict';
 
 export class HandleData {
-  static store(data) {
-    STORAGE.push(data);
-    const convertToString = JSON.stringify(STORAGE);
-    localStorage.setItem('restaurant', convertToString);
+  static store({ item, data, to }) {
+    to.push(data);
+    const convertToString = JSON.stringify(to);
+    localStorage.setItem(item, convertToString);
   }
 
-  static get() {
-    const data = localStorage.getItem('restaurant');
-    const dataParsed = JSON.parse(data);
-    dataParsed != null ? STORAGE = dataParsed : '';
+  static get(item) {
+    const data = localStorage.getItem(item);
+    return JSON.parse(data);
   }
 
-  static removeOld() {
-    STORAGE.splice(0, 9);
+  static removeOld(storage) {
+    storage.splice(0, 9);
   }
-
-  // static keepTheData() {
-  //   dataParsed != null ? STORAGE = dataParsed : '';
-  // }
 }

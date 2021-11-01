@@ -1,4 +1,4 @@
-import STORAGE from "../../../storage/storage.js";
+import { STORAGE } from "../../../storage/storage.js";
 import { HandleData } from "../../../storage/HandleData.js";
 import { $ } from "../../../lib/Mame.js";
 'use strict';
@@ -13,14 +13,12 @@ export class FavoriteButton {
   }
 
   static iconText(index) {
-    if (!localStorage.getItem('restaurant')) {
+    if (!HandleData.get('restaurant')) {
       return `
         <i class="icon-favorite bi bi-heart"></i> 
         <span class="text-favorite">Add to Favorite</span>
       `;
-    } 
-    
-    if (localStorage.getItem('restaurant')) {
+    } else {
       return STORAGE[index];
     }
   }
@@ -62,12 +60,16 @@ export class FavoriteButton {
       store() {
         buttons.forEach((button) => {
           const dataRestaurant = button.innerHTML;
-          HandleData.store(dataRestaurant);
+          HandleData.store({ 
+            item: 'restaurant' ,
+            data: dataRestaurant, 
+            to: STORAGE, 
+          });
         });
       },
 
       update() {
-        HandleData.removeOld();
+        HandleData.removeOld(STORAGE);
         this.store();
       }
     }

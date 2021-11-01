@@ -1,7 +1,10 @@
-let STORAGE = [];
+import { HandleData } from "./HandleData";
+'use strict';
 
-const data = localStorage.getItem('restaurant');
-const dataParsed = JSON.parse(data);
-dataParsed !== null ? STORAGE = dataParsed : "";
+export let STORAGE = [];
 
-export default STORAGE;
+const keepDataExistEvenRefresh = () => {
+  HandleData.get('restaurant') !== null ? STORAGE = HandleData.get('restaurant') : "";
+};
+
+keepDataExistEvenRefresh();
