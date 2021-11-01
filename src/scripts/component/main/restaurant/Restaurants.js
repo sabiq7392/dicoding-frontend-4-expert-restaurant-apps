@@ -17,22 +17,30 @@ class Restaurants extends HTMLElement {
       const { id, name, description, pictureId, city, rating } = restaurant;
 
       this.innerHTML += `
-        <article id="${id}" class="restaurant">
+        <article id="${id}" class="restaurant" tabindex="0">
           <img src="${pictureId}" alt="${name}" class="restaurant-picture">
           <section>
             <header>
               <div>
-                <h2 class="restaurant-name">${name}</h2>
+                <h2 class="restaurant-name" tabindex="0">${name}</h2>
                 <div class="d-flex">
-                  <span aria-label="rating">
+                  <span aria-label="rating" tabindex="0">
                     <i class="bi bi-star-fill"></i> 
                     <span class="restaurant-rating">${rating}</span>
                   </span>
-                  <button class="add-favorite" aria-label="add to favorite" type="button">
+                  <button 
+                    class="add-favorite" 
+                    aria-label="add to favorite" 
+                    type="button">
                     ${FavoriteButton.iconText(indexStorage)}
                   </button>
                 </div>
-                <address class="restaurant-city">${city}</address>
+                <address 
+                  class="restaurant-city" 
+                  tabindex="0" 
+                  title="location ${city}">
+                  ${city}
+                </address>
               </div>
             </header>
             <p class="restaurant-description">${description}</p>

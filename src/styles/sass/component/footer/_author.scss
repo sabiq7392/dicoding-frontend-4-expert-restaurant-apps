@@ -3,8 +3,10 @@
     @include place-center(flex);
     gap: $gap-list-link;
     li {
+      display: grid;
       a {
         color: $theme-color-light;
+        padding: 0.7rem;
         @include media('phone') {
           font-size: 12px;
         }

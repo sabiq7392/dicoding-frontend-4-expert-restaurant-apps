@@ -12,7 +12,7 @@ class AppBar extends HTMLElement {
     this.innerHTML = `
       <nav>
         <a class="navbar-brand" href="index.html">
-          <img src="${logo}" alt="mame food">
+          <img src="${logo}" alt="Ristorante">
         </a>
         <button id="menuButton" aria-label="menu open" type="button">
           <i class="bi bi-list"></i>

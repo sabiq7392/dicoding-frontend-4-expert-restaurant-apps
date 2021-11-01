@@ -40,6 +40,7 @@ export class FavoriteButton {
     }
 
     function add(button) {
+      button.setAttribute('aria-label', 'Added to Favorite')
       button.innerHTML = `
         <i class="icon-favorite bi bi-heart-fill"></i> 
         <span class="text-favorite">Added to Favorite</span>
@@ -47,6 +48,7 @@ export class FavoriteButton {
     }
 
     function cancel(button) {
+      button.setAttribute('aria-label', 'Add to Favorite')
       button.innerHTML = `
         <i class="icon-favorite bi bi-heart"></i> 
         <span class="text-favorite">Add to Favorite</span>
