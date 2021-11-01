@@ -1,15 +1,21 @@
-import data from '../../../DATA.json';
-import { $ } from '../../lib/Mame.js';
+import STORAGE from '../../../storage/storage.js';
+import data from '../../../../DATA.json';
+import { HandleData } from '../../../storage/HandleData.js';
+import { $ } from '../../../lib/Mame.js';
+import { FavoriteButton } from './FavoriteButton.js';
+
 'use strict';
 
 class Restaurants extends HTMLElement {
   connectedCallback() {
     this.#render();
   }
-
+  
   #render() {
+    let indexStorage = 0;
     data.restaurants.forEach((restaurant) => {
       const { id, name, description, pictureId, city, rating } = restaurant;
+
       this.innerHTML += `
         <article id="${id}" class="restaurant">
           <img src="${pictureId}" alt="${name}" class="restaurant-picture">
@@ -23,8 +29,7 @@ class Restaurants extends HTMLElement {
                     <span class="restaurant-rating">${rating}</span>
                   </span>
                   <button class="add-favorite" aria-label="add to favorite" type="button">
-                    <i class="icon-favorite bi bi-heart"></i> 
-                    <span class="text-favorite">Add to Favorite</span>
+                    ${FavoriteButton.iconText(indexStorage)}
                   </button>
                 </div>
                 <address class="restaurant-city">${city}</address>
@@ -34,36 +39,11 @@ class Restaurants extends HTMLElement {
           </section>
         </article>
       `;
-      this.#button();
-    });
-  }
+      
+      const favoriteButton = new FavoriteButton();
+      favoriteButton.run();
 
-  #button() {
-    const buttons = $('.add-favorite');
-    const addedToFavorite = (button) => {
-      button.textContent.includes('Add to Favorite');
-    };
-
-    buttons.forEach((button) => {
-      $(button).onClick(() => {
-        !addedToFavorite ? cancel() : add();
-      });
-
-      function add() {
-        button.innerHTML = `
-          <i class="icon-favorite bi bi-heart-fill"></i> 
-          <span class="text-favorite">Added to Favorite</span>
-        `;
-        $(button).css({ color: '#fd79a8' });
-      };
-
-      function cancel() {
-        button.innerHTML = `
-          <i class="icon-favorite bi bi-heart"></i> 
-          <span class="text-favorite">Add to Favorite</span>
-        `;
-        $(button).css({ color: '' });
-      };
+      indexStorage++;
     });
   }
 }

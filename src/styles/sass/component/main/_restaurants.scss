@@ -58,6 +58,9 @@
             transition: $speed-fast;
             i {
               font-size: 1.2rem;
+              &.bi-heart-fill {
+                color: #fd79a8;
+              }
             }
           }
         }
