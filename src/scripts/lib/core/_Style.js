@@ -1,5 +1,5 @@
-'use strict';
-
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/extensions */
 export function Style({ element }) {
   const camelToKebabCase = (words) => {
     const wordsInArray = words.split('');

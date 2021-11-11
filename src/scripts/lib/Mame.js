@@ -1,10 +1,12 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/prefer-default-export */
 import { Event } from './core/_Event.js';
 import { ClassList } from './core/_ClassList.js';
 import { Style } from './core/_Style.js';
 import { Media } from './core/_Media.js';
 import { isObject } from './core/_Type.js';
 
-export function $(element) {
+export function Mame(element) {
   const anElement = { element };
 
   if (!isObject(element)) {
@@ -24,7 +26,7 @@ export function $(element) {
 }
 
 /*
-  Mame.js 
+  Mame.js
   Make your code simple, readble and easy to maintain
 
   Author: Sabiq Muhammad Antebing Mame;

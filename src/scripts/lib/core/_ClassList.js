@@ -1,5 +1,4 @@
-'use strict';
-
+/* eslint-disable import/prefer-default-export */
 export function ClassList({ element }) {
   return {
     addClass(classlist) {

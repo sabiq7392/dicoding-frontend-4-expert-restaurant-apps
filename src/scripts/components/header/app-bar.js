@@ -1,14 +1,19 @@
+import { Mame as $ } from '../../lib/Mame';
 import logo from '../../../public/images/logo/ristorante-logo.svg';
-import { $ } from '../../lib/Mame.js';
-import Menu from '../header/Menu.js';
-'use strict';
+import DrawerInitiator from '../../utils/drawer-initiator';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
-    this.#render();
+    this._render();
   }
 
-  #render() {
+  _render() {
+    this._template();
+    this._changeColor();
+    DrawerInitiator.init($('#menuContainer'), $('#menuButton'));
+  }
+
+  _template() {
     this.innerHTML = `
       <nav>
         <a class="navbar-brand" href="index.html">
@@ -34,15 +39,9 @@ class AppBar extends HTMLElement {
         </ul>
       </nav>
     `;
-
-    const menu = new Menu();
-    menu.run();
-
-    this.#changeColor();
-
   }
 
-  #changeColor() {
+  _changeColor() {
     $(window).onScroll(() => {
       const appBar = $('#appBar');
       const height = appBar.offsetHeight;

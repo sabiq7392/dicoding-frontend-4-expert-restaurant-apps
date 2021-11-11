@@ -1,5 +1,5 @@
-'use strict';
-
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/extensions */
 import { EventShortcut } from './_EventShortcut.js';
 
 export function Event({ element }) {
@@ -25,6 +25,9 @@ export function Event({ element }) {
     onFocus(listener, options) {
       add('focus', listener, options);
       return this;
+    },
+    onHashChange(listener, options) {
+      add('hashchange', listener, options);
     },
     onKeyUp(listener, options) {
       add('keyup', listener, options);

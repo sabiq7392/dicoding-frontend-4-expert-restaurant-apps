@@ -167,11 +167,11 @@ h1, h2, h3 {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-uem8ar7;
+  animation-name: animation-ubdf8kx;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uem8ar7 {
+@keyframes animation-ubdf8kx {
   from {
     right: -300px;
   }
@@ -180,11 +180,11 @@ h1, h2, h3 {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-uem8arj;
+  animation-name: animation-ubdf8lq;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uem8arj {
+@keyframes animation-ubdf8lq {
   from {
     right: 0;
   }
@@ -317,19 +317,27 @@ h1, h2, h3 {
 #main #containerRestaurants article section header > div span[aria-label=rating] i {
   color: #FF893B;
 }
-#main #containerRestaurants article section header > div button {
+#main #containerRestaurants article section header > div button.add-favorite,
+#main #containerRestaurants article section header > div a.detail {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
+  padding: 0.6rem 0;
   font-size: 0.9rem;
+  gap: 4px;
+}
+#main #containerRestaurants article section header > div button.add-favorite i,
+#main #containerRestaurants article section header > div a.detail i {
+  font-size: 1.4rem;
+}
+#main #containerRestaurants article section header > div button.add-favorite {
   transition: 250ms;
 }
-#main #containerRestaurants article section header > div button i {
-  font-size: 1.2rem;
-}
-#main #containerRestaurants article section header > div button i.bi-heart-fill {
+#main #containerRestaurants article section header > div button.add-favorite i.bi-heart-fill {
   color: #fd79a8;
+}
+#main #containerRestaurants article section header > div a.detail {
+  color: #3498db;
 }
 #main #containerRestaurants article section p {
   max-height: 200px;
@@ -344,7 +352,6 @@ h1, h2, h3 {
   place-items: center;
   background-color: #222;
   padding: 1rem;
-  margin-bottom: -5px;
 }
 
 #author ul {
@@ -353,8 +360,12 @@ h1, h2, h3 {
   align-items: center;
   gap: 1rem;
 }
+#author ul li {
+  display: grid;
+}
 #author ul li a {
   color: #f1f1f1;
+  padding: 0.7rem;
 }
 @media only screen and (max-width: 767px) {
   #author ul li a {

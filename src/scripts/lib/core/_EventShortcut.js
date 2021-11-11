@@ -1,5 +1,5 @@
-'use strict';
-
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/extensions */
 export function EventShortcut({ element }) {
   const add = (event, listener, options) => {
     element.addEventListener(event, listener, options);

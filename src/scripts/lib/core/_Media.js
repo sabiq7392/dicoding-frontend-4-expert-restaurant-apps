@@ -1,8 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable default-case */
-
-'use strict';
-
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable import/extensions */
 export function Media({ element }) {
   return {
     media(screen) {

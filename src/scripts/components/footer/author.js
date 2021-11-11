@@ -1,9 +1,9 @@
 class Author extends HTMLElement {
   connectedCallback() {
-    this.#render();
+    this._render();
   }
 
-  #render() {
+  _render() {
     this.innerHTML = `
       <ul>
         <li>

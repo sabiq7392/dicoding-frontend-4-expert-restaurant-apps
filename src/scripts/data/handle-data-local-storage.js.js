@@ -1,6 +1,4 @@
-'use strict';
-
-export class HandleData {
+class HandleDataLocalStorage {
   static store({ item, data, to }) {
     to.push(data);
     const convertToString = JSON.stringify(to);
@@ -12,7 +10,9 @@ export class HandleData {
     return JSON.parse(data);
   }
 
-  static removeOld(storage) {
-    storage.splice(0, 9);
+  static removeOld({ storage, lengthStoredData }) {
+    storage.splice(0, lengthStoredData);
   }
 }
+
+export default HandleDataLocalStorage;
