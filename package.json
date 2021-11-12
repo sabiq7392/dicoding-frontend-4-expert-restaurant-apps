@@ -45,6 +45,7 @@
   "dependencies": {
     "bootstrap-icons": "^1.6.1",
     "file-loader": "^6.2.0",
+    "idb": "^6.1.5",
     "regenerator-runtime": "^0.13.5",
     "url-loader": "^4.1.1"
   }

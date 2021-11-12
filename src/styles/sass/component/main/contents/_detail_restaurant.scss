@@ -22,20 +22,9 @@
           @include span-rating();
         }
       }
+      
       p.restaurant-description {
         @include restaurant-description();
-      }
-
-      .container-menu-foods {
-
-      }
-
-      .container-menu-drinks {
-
-      }
-
-      .container-description {
-
       }
 
       .container-customer-reviews {
