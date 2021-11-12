@@ -10,7 +10,7 @@ const UrlController = {
   },
 
   url() {
-    this.mainContent = $('#mainContent');
+    this.mainContent = $('#main');
     const isRunning = () => {
       const isUrl = window.location.hash;
       if (isUrl === Routes.default) {

@@ -1,0 +1,61 @@
+#containerDetailRestaurant {
+  display: grid;
+  @include container();
+  article {
+    $border-radius: calc(#{$border-radius-card-image} - 2px);
+    @include article();
+    img {
+      @include img($height: 450px);
+    }
+
+    div.wrapper {
+      @include wrapper($border-radius);
+      display: grid;
+      gap: $gap-medium;
+      padding: $padding-large;
+      header {
+        h2, span {
+          color: $theme-color-dark-text-title;
+        }
+
+        span[aria-label="rating"] {
+          @include span-rating();
+        }
+      }
+      p.restaurant-description {
+        @include restaurant-description();
+      }
+
+      .container-menu-foods {
+
+      }
+
+      .container-menu-drinks {
+
+      }
+
+      .container-description {
+
+      }
+
+      .container-customer-reviews {
+        ol {
+          list-style-type: none;
+          padding: 0;
+          li {
+            border-radius: $border-radius-container;
+            box-shadow: $shadow-small;
+            padding: $padding-large;
+            margin-bottom: $margin-small;
+            
+            background-color: white;
+
+            time {
+              color: $theme-color-active-not;
+            }
+          } 
+        }
+      }
+    }
+  }
+}

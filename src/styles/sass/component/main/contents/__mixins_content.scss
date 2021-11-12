@@ -1,0 +1,35 @@
+@mixin article() {
+  box-shadow: $shadow-card;
+  transition: $speed-fast;
+  background-color: white;
+  border-radius: $border-radius-card-image;
+}
+
+@mixin img($height) {
+  display: block;
+
+  width: 100%;
+  height: $height;
+
+  object-fit: cover;
+
+  border-top-left-radius: $border-radius-card-image;
+  border-top-right-radius: $border-radius-card-image;
+}
+
+@mixin wrapper($border-radius) {
+  border-radius: $border-radius;
+  transition: $speed-normal;
+}
+
+@mixin span-rating() {
+  font-weight: bold;
+  i {
+    color: $theme-color-primary;
+  }
+}
+
+@mixin restaurant-description() {
+  color: $theme-color-dark-text-paragraf;
+  line-height: 150%;
+}

@@ -27,6 +27,9 @@ $padding-medium: 1rem;
 $padding-large: 1.5rem;
 $padding-container: 4rem;
 
+$margin-small: $padding-small;
+$margin-medium: $padding-medium;
+
 $gap-small: $padding-small;
 $gap-medium: $padding-medium;
 $gap-large: $padding-large;
@@ -35,6 +38,7 @@ $gap-list-link: $gap-medium;
 
 // ---------- Shadow -----------
 $shadow-default: rgba(0, 0, 0, .2) 0px 1px 8px;
+$shadow-small: rgba(0, 0, 0, .15) 0px 1px 4px;
 $shadow-card: rgba($theme-color-dark, .09) 0px 0px 10px;
 
 // ---------- Transition/Speed -

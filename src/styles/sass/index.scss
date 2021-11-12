@@ -26,6 +26,14 @@ h1,h2,h3 {
   font-family: $font-title;
 }
 
+h3, h2 {
+  font-weight: 600;
+}
+
+ol {
+  padding-left: 30px;
+}
+
 #skipContent {
   position: absolute;
   top: -40px;

@@ -1,4 +1,4 @@
-#exploreRestaurants {
+#mainContents {
   @include container();
   display: grid;
   row-gap: $gap-medium;
@@ -9,4 +9,8 @@
   }
 }
 
+
+
+@import '_mixins_content';
 @import 'restaurants';
+@import 'detail_restaurant';
