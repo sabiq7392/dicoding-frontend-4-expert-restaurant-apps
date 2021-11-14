@@ -3,8 +3,8 @@ import { Mame as $ } from '../lib/Mame';
 import DicodingRestaurantSource from '../data/dicoding-restaurant-source.js';
 import CONFIG from '../globals/config';
 
-const Detail = {
-  async render() {
+class Detail {
+  static async render() {
     return `
       <div id="mainContents">
         <div id="containerDetailRestaurant">
@@ -12,37 +12,37 @@ const Detail = {
         </div>
       </div>
     `;
-  },
+  }
 
-  async afterRender(id) {
+  static async afterRender(id) {
     const containerRestaurant = $('#containerDetailRestaurant');
     const restaurant = await DicodingRestaurantSource.detail(id);
 
-    containerRestaurant.innerHTML = await this._template(restaurant);
-    await this._menuFoods(restaurant);
-    await this._menuDrinks(restaurant);
-    await this._customerReviews(restaurant);
-  },
+    containerRestaurant.innerHTML = await this.#template(restaurant);
+    await this.#menuFoods(restaurant);
+    await this.#menuDrinks(restaurant);
+    await this.#customerReviews(restaurant);
+  }
 
-  async _menuFoods(restaurant) {
+  static async #menuFoods(restaurant) {
     const restaurantMenuFoods = $('#restaurantMenuFoods');
     restaurant.menus.foods.forEach((food, index) => {
       if (index < 2) {
         restaurantMenuFoods.innerHTML += `<li tabindex="0">${food.name}</li>`;
       }
     });
-  },
+  }
 
-  async _menuDrinks(restaurant) {
+  static async #menuDrinks(restaurant) {
     const restaurantMenuDrinks = $('#restaurantMenuDrinks');
     restaurant.menus.drinks.forEach((drink, index) => {
       if (index < 2) {
         restaurantMenuDrinks.innerHTML += `<li tabindex="0">${drink.name}</li>`;
       }
     });
-  },
+  }
 
-  async _customerReviews(restaurant) {
+  static async #customerReviews(restaurant) {
     const restaurantCustomerReviews = $('#restaurantCustomerReviews');
     restaurant.customerReviews.forEach((customerReview, index) => {
       if (index < 2) {
@@ -55,9 +55,9 @@ const Detail = {
       `;
       }
     });
-  },
+  }
 
-  async _template(restaurant) {
+  static async #template(restaurant) {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
@@ -115,7 +115,7 @@ const Detail = {
         </div>
       </article>
     `;
-  },
-};
+  }
+}
 
 export default Detail;

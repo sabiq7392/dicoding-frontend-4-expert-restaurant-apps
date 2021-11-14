@@ -7,45 +7,45 @@ import {
   createButtonLikeFavoriteTemplate,
 } from '../templates/template-creator';
 
-const FavoriteButton = {
-  init() {
-    this.buttons = $('.add-favorite');
-    this._renderButton();
-  },
+class FavoriteButton {
+  constructor(buttons) {
+    this.buttons = buttons;
+    this.#renderButton();
+  }
 
-  _renderButton() {
-    this.buttons.forEach((button) => {
-      $(button).onClick(() => {
-        if (this._isFavorite(button)) {
-          this._renderFavorite(button);
-        } else {
-          this._renderFavorited(button);
-        }
-        DataFavoriteRestaurant.update(this.buttons);
-      });
-    });
-  },
-
-  renderDefaultOrUpdate(index) {
+  static renderDefaultOrUpdate(index) {
     if (!HandleDataLocalStorage.get('restaurant')) {
       return createButtonLikeFavoriteTemplate();
     }
     return STORAGE[index];
-  },
+  }
 
-  _isFavorite(button) {
+  #renderButton() {
+    this.buttons.forEach((button) => {
+      $(button).onClick(() => {
+        if (this.#isFavorite(button)) {
+          this.#renderFavorite(button);
+        } else {
+          this.#renderFavorited(button);
+        }
+        DataFavoriteRestaurant.update(this.buttons);
+      });
+    });
+  }
+
+  #isFavorite(button) {
     return button.textContent.includes('Added to Favorite');
-  },
+  }
 
-  _renderFavorite(button) {
+  #renderFavorite(button) {
     button.setAttribute('aria-label', 'Add to Favorite');
     button.innerHTML = createButtonLikeFavoriteTemplate();
-  },
+  }
 
-  _renderFavorited(button) {
+  #renderFavorited(button) {
     button.setAttribute('aria-label', 'Added to Favorite');
     button.innerHTML = createButtonLikedFavoriteTemplate();
-  },
-};
+  }
+}
 
 export default FavoriteButton;

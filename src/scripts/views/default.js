@@ -3,8 +3,8 @@ import FavoriteButton from '../utils/favorite-button';
 import CONFIG from '../globals/config';
 import { Mame as $ } from '../lib/Mame';
 
-const Default = {
-  async render() {
+class Default {
+  static async render() {
     return `
       <hero-element id="hero"></hero-element>
       <div id="mainContents">
@@ -14,20 +14,20 @@ const Default = {
         </div>
       </div>
     `;
-  },
+  }
 
-  async afterRender() {
+  static async afterRender() {
     const restaurants = await DicodingRestaurantSource.getAll();
     const containerRestaurants = $('#containerRestaurants');
 
     restaurants.forEach((restaurant, indexIcon) => {
-      containerRestaurants.innerHTML += this._template(restaurant, indexIcon);
+      containerRestaurants.innerHTML += this.#template(restaurant, indexIcon);
     });
 
-    FavoriteButton.init();
-  },
+    this.#favoriteButton($('.add-favorite'));
+  }
 
-  _template(restaurant, indexIcon) {
+  static #template(restaurant, indexIcon) {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
@@ -64,7 +64,12 @@ const Default = {
         </div>
       </article>
     `;
-  },
-};
+  }
+
+  static #favoriteButton(buttons) {
+    const favoriteButton = new FavoriteButton(buttons);
+    return favoriteButton;
+  }
+}
 
 export default Default;

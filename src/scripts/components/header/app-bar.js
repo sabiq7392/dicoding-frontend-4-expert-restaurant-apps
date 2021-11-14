@@ -4,16 +4,19 @@ import DrawerInitiator from '../../utils/drawer-initiator';
 
 class AppBar extends HTMLElement {
   connectedCallback() {
-    this._render();
+    this.#render();
   }
 
-  _render() {
-    this._template();
-    this._changeColor();
-    DrawerInitiator.init($('#menuContainer'), $('#menuButton'));
+  #render() {
+    this.#template();
+    this.#changeColor();
+    this.#drawerInitiator(
+      $('#menuContainer'),
+      $('#menuButton'),
+    );
   }
 
-  _template() {
+  #template() {
     this.innerHTML = `
       <nav>
         <a class="navbar-brand" href="index.html">
@@ -41,7 +44,7 @@ class AppBar extends HTMLElement {
     `;
   }
 
-  _changeColor() {
+  #changeColor() {
     $(window).onScroll(() => {
       const appBar = $('#appBar');
       const height = appBar.offsetHeight;
@@ -56,6 +59,11 @@ class AppBar extends HTMLElement {
         });
       }
     });
+  }
+
+  #drawerInitiator(container, button) {
+    const drawerInitiator = new DrawerInitiator(container, button);
+    return drawerInitiator;
   }
 }
 
