@@ -1,19 +1,468 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 14 | @import '_mixins';
- *    |         ^^^^^^^^^
- *    '
- *   src\styles\sass\component\main\contents\_contents.scss 14:9  @import
- *   src\styles\sass\component\main\_main.scss 3:11               @import
- *   src\styles\sass\index.scss 53:9                              root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 14 \2502  @import '_mixins';\d\a    \2502          ^^^^^^^^^\a    \2575 \a   src\\styles\\sass\\component\\main\\contents\\_contents.scss 14:9  @import\a   src\\styles\\sass\\component\\main\\_main.scss 3:11               @import\a   src\\styles\\sass\\index.scss 53:9                              root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.align-items-center {
+  align-items: center;
 }
+
+.container {
+  max-width: 70%;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+.gap-md {
+  gap: 1rem;
+}
+
+/*
+  Mame.scss
+  Make your code simple, readble and easy to maintain
+
+  Author: Sabiq Muhammad Antebing Mame;
+  Contact: sabiqmuhammad98@gmail.com;
+  Github: sabiq7392;
+*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+* {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+}
+
+*:focus {
+  outline: 1px solid #FF893B;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  background-color: #f1f1f1;
+}
+
+button {
+  cursor: pointer;
+}
+
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+h3, h2 {
+  font-weight: 600;
+}
+
+ol {
+  padding-left: 30px;
+}
+
+#skipContent {
+  position: absolute;
+  top: -40px;
+  z-index: 100;
+  padding: 8px;
+  background-color: #555;
+  color: #f1f1f1;
+  transition: top 500ms;
+}
+#skipContent:focus {
+  top: 0;
+}
+
+#header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 8px;
+}
+
+#appBar {
+  display: block;
+  background-color: rgba(34, 34, 34, 0.5);
+  transition: background-color 500ms;
+}
+#appBar nav {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 100%;
+  padding: 0.5rem;
+}
+@media only screen and (min-width: 576px) {
+  #appBar nav {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #appBar nav {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #appBar nav {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #appBar nav {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #appBar nav {
+    max-width: 1320px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav {
+    padding: 0.5rem;
+  }
+}
+#appBar nav .navbar-brand {
+  display: grid;
+  place-items: center;
+}
+#appBar nav .navbar-brand img {
+  width: 10rem;
+}
+#appBar nav button {
+  display: none;
+  font-size: 2.8rem;
+  color: white;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav button {
+    display: block;
+  }
+}
+#appBar nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav ul {
+    display: none;
+  }
+}
+#appBar nav ul.active {
+  display: grid;
+  gap: 1rem;
+  position: fixed;
+  top: 70px;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 8px;
+  background-color: #222;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+#appBar nav ul.active li a {
+  width: 200px;
+}
+#appBar nav ul.show-animation {
+  animation-name: animation-usjsh7f;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+}
+@keyframes animation-usjsh7f {
+  from {
+    right: -300px;
+  }
+  to {
+    right: 0;
+  }
+}
+#appBar nav ul.hide-animation {
+  animation-name: animation-usjsh7i;
+  animation-duration: 500ms;
+  animation-iteration-count: 1;
+}
+@keyframes animation-usjsh7i {
+  from {
+    right: 0;
+  }
+  to {
+    right: -300px;
+  }
+}
+#appBar nav ul li {
+  display: grid;
+  place-items: center;
+}
+#appBar nav ul li a {
+  display: grid;
+  align-items: center;
+  height: 44px;
+  color: #C4C4C4;
+  padding: 0.5rem 1rem;
+}
+#appBar nav ul li a.active {
+  color: #FF893B;
+  font-weight: bold;
+}
+#appBar nav ul li a:hover, #appBar nav ul li a:focus {
+  color: #FF893B;
+}
+@media only screen and (max-width: 767px) {
+  #appBar nav ul li a:hover, #appBar nav ul li a:focus {
+    background-color: #555;
+  }
+}
+
+#main #hero {
+  min-width: 100vw;
+  height: 100vh;
+}
+#main #hero img {
+  display: block;
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  object-position: center;
+}
+#main #mainContents {
+  margin: auto;
+  width: 100%;
+  display: grid;
+  row-gap: 1rem;
+  padding: 4rem 0;
+}
+@media only screen and (min-width: 576px) {
+  #main #mainContents {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #main #mainContents {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main #mainContents {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main #mainContents {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #main #mainContents {
+    max-width: 1320px;
+  }
+}
+#main #mainContents h1 {
+  text-align: center;
+}
+#main #containerRestaurants {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+@media only screen and (max-width: 1023px) {
+  #main #containerRestaurants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 767px) {
+  #main #containerRestaurants {
+    grid-template-columns: 1fr;
+  }
+}
+#main #containerRestaurants article {
+  box-shadow: rgba(34, 34, 34, 0.09) 0px 0px 10px;
+  transition: 250ms;
+  background-color: white;
+  border-radius: 10px;
+}
+#main #containerRestaurants article img {
+  display: block;
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#main #containerRestaurants article div.wrapper {
+  border-radius: calc(10px - 2px);
+  transition: 500ms;
+}
+#main #containerRestaurants article div.wrapper header {
+  border-bottom: 1px solid gainsboro;
+  padding: 0.5rem 1.5rem;
+}
+#main #containerRestaurants article div.wrapper header h2, #main #containerRestaurants article div.wrapper header span {
+  color: #444;
+}
+#main #containerRestaurants article div.wrapper header span[aria-label=rating] {
+  font-weight: bold;
+}
+#main #containerRestaurants article div.wrapper header span[aria-label=rating] i {
+  color: #FF893B;
+}
+#main #containerRestaurants article div.wrapper header button.add-favorite,
+#main #containerRestaurants article div.wrapper header a.detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+  gap: 4px;
+}
+#main #containerRestaurants article div.wrapper header button.add-favorite i,
+#main #containerRestaurants article div.wrapper header a.detail i {
+  font-size: 1.4rem;
+}
+#main #containerRestaurants article div.wrapper header button.add-favorite {
+  transition: 250ms;
+}
+#main #containerRestaurants article div.wrapper header button.add-favorite i.bi-heart-fill {
+  color: #fd79a8;
+}
+#main #containerRestaurants article div.wrapper header a.detail {
+  color: #3498db;
+}
+#main #containerRestaurants article div.wrapper p.restaurant-description {
+  color: #222;
+  line-height: 150%;
+  padding: 1.5rem;
+  max-height: 200px;
+  overflow-y: scroll;
+}
+#main #containerDetailRestaurant {
+  display: grid;
+  margin: auto;
+  width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  #main #containerDetailRestaurant {
+    max-width: 100%;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #main #containerDetailRestaurant {
+    max-width: 720px;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #main #containerDetailRestaurant {
+    max-width: 960px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #main #containerDetailRestaurant {
+    max-width: 1140px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  #main #containerDetailRestaurant {
+    max-width: 1320px;
+  }
+}
+#main #containerDetailRestaurant article {
+  box-shadow: rgba(34, 34, 34, 0.09) 0px 0px 10px;
+  transition: 250ms;
+  background-color: white;
+  border-radius: 10px;
+}
+#main #containerDetailRestaurant article img {
+  display: block;
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#main #containerDetailRestaurant article div.wrapper {
+  border-radius: calc(10px - 2px);
+  transition: 500ms;
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+#main #containerDetailRestaurant article div.wrapper header h2, #main #containerDetailRestaurant article div.wrapper header span {
+  color: #444;
+}
+#main #containerDetailRestaurant article div.wrapper header span[aria-label=rating] {
+  font-weight: bold;
+}
+#main #containerDetailRestaurant article div.wrapper header span[aria-label=rating] i {
+  color: #FF893B;
+}
+#main #containerDetailRestaurant article div.wrapper p.restaurant-description {
+  color: #222;
+  line-height: 150%;
+}
+#main #containerDetailRestaurant article div.wrapper .container-customer-reviews ol {
+  list-style-type: none;
+  padding: 0;
+}
+#main #containerDetailRestaurant article div.wrapper .container-customer-reviews ol li {
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 4px;
+  padding: 1.5rem;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+#main #containerDetailRestaurant article div.wrapper .container-customer-reviews ol li time {
+  color: #C4C4C4;
+}
+
+#footer {
+  display: grid;
+  place-items: center;
+  background-color: #222;
+  padding: 1rem;
+}
+
+#author ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#author ul li {
+  display: grid;
+}
+#author ul li a {
+  color: #f1f1f1;
+  padding: 0.7rem;
+}
+@media only screen and (max-width: 767px) {
+  #author ul li a {
+    font-size: 12px;
+  }
+}
+#author ul li a:hover {
+  color: #FF893B;
+}
+
+/*# sourceMappingURL=index.css.map */

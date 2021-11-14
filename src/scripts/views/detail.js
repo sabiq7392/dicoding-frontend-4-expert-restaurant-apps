@@ -28,7 +28,7 @@ const Detail = {
     const restaurantMenuFoods = $('#restaurantMenuFoods');
     restaurant.menus.foods.forEach((food, index) => {
       if (index < 2) {
-        restaurantMenuFoods.innerHTML += `<li>${food.name}</li>`;
+        restaurantMenuFoods.innerHTML += `<li tabindex="0">${food.name}</li>`;
       }
     });
   },
@@ -37,7 +37,7 @@ const Detail = {
     const restaurantMenuDrinks = $('#restaurantMenuDrinks');
     restaurant.menus.drinks.forEach((drink, index) => {
       if (index < 2) {
-        restaurantMenuDrinks.innerHTML += `<li>${drink.name}</li>`;
+        restaurantMenuDrinks.innerHTML += `<li tabindex="0">${drink.name}</li>`;
       }
     });
   },
@@ -48,9 +48,9 @@ const Detail = {
       if (index < 2) {
         restaurantCustomerReviews.innerHTML += `
         <li>
-          <h4>${customerReview.name}</h4>
-          <p>${customerReview.review}</p>
-          <time><small>${customerReview.date}</small></time>
+          <h4 tabindex="0">${customerReview.name}</h4>
+          <p tabindex="0">${customerReview.review}</p>
+          <time tabindex="0"><small>${customerReview.date}</small></time>
         </li>
       `;
       }
@@ -88,26 +88,26 @@ const Detail = {
           </header>
           <div class="d-flex gap-md">
             <section class="container-menu-foods">
-              <h3>Menu Makanan</h3>
+              <h3 tabindex="0">Menu Makanan</h3>
               <ol id="restaurantMenuFoods">
 
               </ol>
             </section>
             <section class="container-menu-drinks">
-              <h3>Menu Minuman</h3>
+              <h3 tabindex="0">Menu Minuman</h3>
               <ol id="restaurantMenuDrinks">
 
               </ol>
             </section>         
           </div>
           <section class="container-description">
-            <h3>Description</h3>
-            <p class="restaurant-description">
+            <h3 tabindex="0">Description</h3>
+            <p tabindex="0" class="restaurant-description">
               ${restaurant.description}
             </p>
           </section>
           <section class="container-customer-reviews">
-            <h3>Reviews</h3>
+            <h3 tabindex="0">Reviews</h3>
             <ol id="restaurantCustomerReviews">
 
             </ol>
