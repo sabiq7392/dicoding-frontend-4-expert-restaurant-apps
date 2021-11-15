@@ -1,7 +1,9 @@
-import DicodingRestaurantSource from '../data/dicoding-restaurant-source.js';
+import DicodingRestaurantSource from '../data/dicoding-restaurant';
 import FavoriteButton from '../utils/favorite-button';
 import CONFIG from '../globals/config';
 import { Mame as $ } from '../lib/Mame';
+import { createButtonFavoriteTemplate } from '../templates/template-creator';
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 
 class Default {
   static async render() {
@@ -20,14 +22,31 @@ class Default {
     const restaurants = await DicodingRestaurantSource.getAll();
     const containerRestaurants = $('#containerRestaurants');
 
-    restaurants.forEach((restaurant, indexIcon) => {
-      containerRestaurants.innerHTML += this.#template(restaurant, indexIcon);
-    });
+    restaurants.forEach((restaurant, indexButton) => {
+      containerRestaurants.innerHTML += this.#template(restaurant, indexButton);
 
-    this.#favoriteButton($('.add-favorite'));
+      // FavoriteButton.init({
+      //   buttons: $('.add-favorite'),
+      //   restaurant: {
+      //     id: restaurant.id,
+      //     name: restaurant.name,
+      //   },
+      // });
+    });
+    // const buttons = $('.add-favorite');
+    // buttons.forEach((button, index) => {
+    //   button.addEventListener('click', () => {
+    //     console.log(restaurants[index].name)
+    //   });
+    // });
+    await FavoriteButton.init({
+      page: 'default',
+      buttons: $('.add-favorite'),
+      data: restaurants,
+    });
   }
 
-  static #template(restaurant, indexIcon) {
+  static #template(restaurant) {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
@@ -46,7 +65,7 @@ class Default {
                 class="add-favorite" 
                 aria-label="add to favorite" 
                 type="button">
-                ${FavoriteButton.renderDefaultOrUpdate(indexIcon)}
+              ${createButtonFavoriteTemplate()}
               </button>
               <a class="detail" href="#detail/${restaurant.id}">
                 <i class="bi bi-eye-fill"></i>
@@ -66,10 +85,12 @@ class Default {
     `;
   }
 
-  static #favoriteButton(buttons) {
-    const favoriteButton = new FavoriteButton(buttons);
-    return favoriteButton;
-  }
+  // static #favoriteButton(buttons) {
+  //   const favoriteButton = new FavoriteButton(buttons);
+  //   return favoriteButton;
+  // }
 }
+
+// ${FavoriteButton.renderDefaultOrUpdate(indexIcon)}
 
 export default Default;

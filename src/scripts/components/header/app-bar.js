@@ -10,10 +10,7 @@ class AppBar extends HTMLElement {
   #render() {
     this.#template();
     this.#changeColor();
-    this.#drawerInitiator(
-      $('#menuContainer'),
-      $('#menuButton'),
-    );
+    DrawerInitiator.init($('#menuContainer'), $('#menuButton'));
   }
 
   #template() {
@@ -61,10 +58,10 @@ class AppBar extends HTMLElement {
     });
   }
 
-  #drawerInitiator(container, button) {
-    const drawerInitiator = new DrawerInitiator(container, button);
-    return drawerInitiator;
-  }
+  // #drawerInitiator(container, button) {
+  //   const drawerInitiator = new DrawerInitiator(container, button);
+  //   return drawerInitiator;
+  // }
 }
 
 customElements.define('app-bar', AppBar);

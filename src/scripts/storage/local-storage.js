@@ -1,5 +1,5 @@
 /* eslint-disable import/no-mutable-exports */
-import HandleDataLocalStorage from '../data/handle-data-local-storage.js';
+import HandleDataLocalStorage from '../utils/handle-local-storage.js.js';
 
 let STORAGE = [];
 

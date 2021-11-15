@@ -1,7 +1,9 @@
 /* eslint-disable no-return-assign */
 import { Mame as $ } from '../lib/Mame';
-import DicodingRestaurantSource from '../data/dicoding-restaurant-source.js';
+import DicodingRestaurantSource from '../data/dicoding-restaurant';
 import CONFIG from '../globals/config';
+import FavoriteButton from '../utils/favorite-button';
+import { createButtonFavoriteTemplate } from '../templates/template-creator';
 
 class Detail {
   static async render() {
@@ -22,38 +24,37 @@ class Detail {
     await this.#menuFoods(restaurant);
     await this.#menuDrinks(restaurant);
     await this.#customerReviews(restaurant);
+    await FavoriteButton.init({
+      page: 'detail',
+      buttons: document.querySelector('.add-favorite'),
+      data: restaurant,
+    });
   }
 
   static async #menuFoods(restaurant) {
     const restaurantMenuFoods = $('#restaurantMenuFoods');
-    restaurant.menus.foods.forEach((food, index) => {
-      if (index < 2) {
-        restaurantMenuFoods.innerHTML += `<li tabindex="0">${food.name}</li>`;
-      }
+    restaurant.menus.foods.forEach((food) => {
+      restaurantMenuFoods.innerHTML += `<li tabindex="0">${food.name}</li>`;
     });
   }
 
   static async #menuDrinks(restaurant) {
     const restaurantMenuDrinks = $('#restaurantMenuDrinks');
-    restaurant.menus.drinks.forEach((drink, index) => {
-      if (index < 2) {
-        restaurantMenuDrinks.innerHTML += `<li tabindex="0">${drink.name}</li>`;
-      }
+    restaurant.menus.drinks.forEach((drink) => {
+      restaurantMenuDrinks.innerHTML += `<li tabindex="0">${drink.name}</li>`;
     });
   }
 
   static async #customerReviews(restaurant) {
     const restaurantCustomerReviews = $('#restaurantCustomerReviews');
-    restaurant.customerReviews.forEach((customerReview, index) => {
-      if (index < 2) {
-        restaurantCustomerReviews.innerHTML += `
-        <li>
-          <h4 tabindex="0">${customerReview.name}</h4>
-          <p tabindex="0">${customerReview.review}</p>
-          <time tabindex="0"><small>${customerReview.date}</small></time>
-        </li>
-      `;
-      }
+    restaurant.customerReviews.forEach((customerReview) => {
+      restaurantCustomerReviews.innerHTML += `
+      <li>
+        <h4 tabindex="0">${customerReview.name}</h4>
+        <p tabindex="0">${customerReview.review}</p>
+        <time tabindex="0"><small>${customerReview.date}</small></time>
+      </li>
+    `;
     });
   }
 
@@ -67,11 +68,17 @@ class Detail {
         <div class="wrapper">
           <header>
             <h2 class="restaurant-name" tabindex="0">${restaurant.name}</h2>
-            <div class="d-flex">
+            <div class="d-flex gap-md align-items-center">
               <span aria-label="rating" tabindex="0">
                 <i class="bi bi-star-fill"></i> 
                 <span class="restaurant-rating">${restaurant.rating}</span>
               </span>
+              <button
+                class="add-favorite" 
+                aria-label="add to favorite" 
+                type="button">
+                ${createButtonFavoriteTemplate()}
+              </button>
             </div>
             <p 
               class="restaurant-city" 
@@ -108,9 +115,11 @@ class Detail {
           </section>
           <section class="container-customer-reviews">
             <h3 tabindex="0">Reviews</h3>
-            <ol id="restaurantCustomerReviews">
+            <details>
+              <ol id="restaurantCustomerReviews">
 
-            </ol>
+              </ol>
+            </details>
           </section>
         </div>
       </article>

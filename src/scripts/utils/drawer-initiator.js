@@ -1,12 +1,12 @@
 import { Mame as $ } from '../lib/Mame';
 
 class DrawerInitiator {
-  constructor(container, button) {
+  static init(container, button) {
     this.#buttonDrawer(container, button);
     this.#forceCloseDrawer(container);
   }
 
-  #buttonDrawer(container, button) {
+  static #buttonDrawer(container, button) {
     $(button).onClick(() => {
       const isActive = $(container).containClass(['active']);
       if (!isActive) {
@@ -27,12 +27,12 @@ class DrawerInitiator {
     });
   }
 
-  #changeIconLabelButtonDrawer({ button, label, icon }) {
+  static #changeIconLabelButtonDrawer({ button, label, icon }) {
     button.innerHTML = icon;
     button.setAttribute('aria-label', label);
   }
 
-  #openDrawer(container) {
+  static #openDrawer(container) {
     $(container)
       .removeClass(['hide-animation'])
       .addClass(['active', 'show-animation'])
@@ -41,7 +41,7 @@ class DrawerInitiator {
       });
   }
 
-  #closeDrawer(container) {
+  static #closeDrawer(container) {
     $(container)
       .removeClass(['show-animation'])
       .addClass(['hide-animation'])
@@ -50,7 +50,7 @@ class DrawerInitiator {
       });
   }
 
-  #forceCloseDrawer(container) {
+  static #forceCloseDrawer(container) {
     $(window).onResize(() => {
       const phoneScreen = $(window).media('phone');
       const isActive = $(container).containClass(['active']);

@@ -21,6 +21,20 @@
         span[aria-label="rating"] {
           @include span-rating();
         }
+
+        button.add-favorite {
+          @include place-center(flex);
+          padding: 0.6rem 0;
+          font-size: .9rem;
+          gap: 4px;
+          transition: $speed-fast;
+          i {
+            font-size: 1.4rem;
+            &.bi-heart-fill {
+              color: #fd79a8;
+            }
+          }
+        }
       }
       
       p.restaurant-description {

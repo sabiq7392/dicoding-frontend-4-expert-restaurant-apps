@@ -1,16 +1,16 @@
-import HandleDataLocalStorage from './handle-data-local-storage.js';
+import HandleDataLocalStorage from '../utils/handle-local-storage.js';
 import STORAGE from '../storage/local-storage';
 
-const DataFavoriteRestaurant = {
-  update(favoriteButtons) {
+class DataFavoriteRestaurant {
+  static update(favoriteButtons) {
     HandleDataLocalStorage.removeOld({
       storage: STORAGE,
       lengthStoredData: STORAGE.length,
     });
-    this._store(favoriteButtons);
-  },
+    this.#store(favoriteButtons);
+  }
 
-  _store(buttons) {
+  static #store(buttons) {
     buttons.forEach((button) => {
       const dataRestaurant = button.innerHTML;
       HandleDataLocalStorage.store({
@@ -19,7 +19,7 @@ const DataFavoriteRestaurant = {
         to: STORAGE,
       });
     });
-  },
-};
+  }
+}
 
 export default DataFavoriteRestaurant;

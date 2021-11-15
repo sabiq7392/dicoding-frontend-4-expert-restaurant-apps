@@ -187,11 +187,11 @@ ol {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-usjsh7f;
+  animation-name: animation-ulttx9i;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-usjsh7f {
+@keyframes animation-ulttx9i {
   from {
     right: -300px;
   }
@@ -200,11 +200,11 @@ ol {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-usjsh7i;
+  animation-name: animation-ulttx9p;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-usjsh7i {
+@keyframes animation-ulttx9p {
   from {
     right: 0;
   }
@@ -416,6 +416,23 @@ ol {
 }
 #main #containerDetailRestaurant article div.wrapper header span[aria-label=rating] i {
   color: #FF893B;
+}
+#main #containerDetailRestaurant article div.wrapper header button.add-favorite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+  gap: 4px;
+}
+#main #containerDetailRestaurant article div.wrapper header button.add-favorite i {
+  font-size: 1.4rem;
+}
+#main #containerDetailRestaurant article div.wrapper header button.add-favorite {
+  transition: 250ms;
+}
+#main #containerDetailRestaurant article div.wrapper header button.add-favorite i.bi-heart-fill {
+  color: #fd79a8;
 }
 #main #containerDetailRestaurant article div.wrapper p.restaurant-description {
   color: #222;
