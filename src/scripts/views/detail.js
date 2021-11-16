@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 import { Mame as $ } from '../lib/Mame';
 import DicodingRestaurantSource from '../data/dicoding-restaurant-source';
 import FavoriteButton from '../utils/favorite-button';
@@ -15,17 +16,23 @@ class Detail {
   }
 
   static async afterRender(id) {
-    const restaurant = await DicodingRestaurantSource.detail(id);
-    const containerRestaurant = $('#containerDetailRestaurant');
+    try {
+      const restaurant = await DicodingRestaurantSource.detail(id);
+      const containerRestaurant = $('#containerDetailRestaurant');
 
-    containerRestaurant.innerHTML = CreateTemplate.RestaurantItemDetail(restaurant);
-    this.#menuFoods(restaurant);
-    this.#menuDrinks(restaurant);
-    this.#customerReviews(restaurant);
-    await FavoriteButton.init({
-      buttons: $('.add-favorite'),
-      data: restaurant,
-    });
+      containerRestaurant.innerHTML = CreateTemplate.RestaurantItemDetail(restaurant);
+      this.#menuFoods(restaurant);
+      this.#menuDrinks(restaurant);
+      this.#customerReviews(restaurant);
+
+      await FavoriteButton.init({
+        buttons: $('.add-favorite'),
+        data: restaurant,
+      });
+    } catch (error) {
+      alert(`${error}, try to refresh page again or check your internet connection`);
+      throw new Error(error);
+    }
   }
 
   static #menuFoods(restaurant) {
