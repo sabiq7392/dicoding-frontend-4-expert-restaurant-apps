@@ -1,5 +1,6 @@
 import Default from './default';
 import Detail from './detail';
+import Favorite from './favorite';
 import { Mame as $ } from '../lib/Mame';
 
 const Views = {
@@ -15,6 +16,13 @@ const Views = {
 
     mainContent.innerHTML = await Detail.render();
     await Detail.afterRender(id);
+  },
+
+  async favorite() {
+    const mainContent = $('#main');
+
+    mainContent.innerHTML = await Favorite.render();
+    await Favorite.afterRender();
   },
 };
 

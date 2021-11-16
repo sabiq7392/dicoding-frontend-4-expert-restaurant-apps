@@ -187,11 +187,11 @@ ol {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-ulttx9i;
+  animation-name: animation-uzm2lm0;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-ulttx9i {
+@keyframes animation-uzm2lm0 {
   from {
     right: -300px;
   }
@@ -200,11 +200,11 @@ ol {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-ulttx9p;
+  animation-name: animation-uzm2lm3;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-ulttx9p {
+@keyframes animation-uzm2lm3 {
   from {
     right: 0;
   }
@@ -282,28 +282,28 @@ ol {
 #main #mainContents h1 {
   text-align: center;
 }
-#main #containerRestaurants {
+#main #containerRestaurants, #main #containerFavoriteRestaurants {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 3rem;
 }
 @media only screen and (max-width: 1023px) {
-  #main #containerRestaurants {
+  #main #containerRestaurants, #main #containerFavoriteRestaurants {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (max-width: 767px) {
-  #main #containerRestaurants {
+  #main #containerRestaurants, #main #containerFavoriteRestaurants {
     grid-template-columns: 1fr;
   }
 }
-#main #containerRestaurants article {
+#main #containerRestaurants article, #main #containerFavoriteRestaurants article {
   box-shadow: rgba(34, 34, 34, 0.09) 0px 0px 10px;
   transition: 250ms;
   background-color: white;
   border-radius: 10px;
 }
-#main #containerRestaurants article img {
+#main #containerRestaurants article img, #main #containerFavoriteRestaurants article img {
   display: block;
   width: 100%;
   height: 250px;
@@ -311,25 +311,26 @@ ol {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-#main #containerRestaurants article div.wrapper {
+#main #containerRestaurants article div.wrapper, #main #containerFavoriteRestaurants article div.wrapper {
   border-radius: calc(10px - 2px);
   transition: 500ms;
 }
-#main #containerRestaurants article div.wrapper header {
+#main #containerRestaurants article div.wrapper header, #main #containerFavoriteRestaurants article div.wrapper header {
   border-bottom: 1px solid gainsboro;
   padding: 0.5rem 1.5rem;
 }
-#main #containerRestaurants article div.wrapper header h2, #main #containerRestaurants article div.wrapper header span {
+#main #containerRestaurants article div.wrapper header h2, #main #containerRestaurants article div.wrapper header span, #main #containerFavoriteRestaurants article div.wrapper header h2, #main #containerFavoriteRestaurants article div.wrapper header span {
   color: #444;
 }
-#main #containerRestaurants article div.wrapper header span[aria-label=rating] {
+#main #containerRestaurants article div.wrapper header span[aria-label=rating], #main #containerFavoriteRestaurants article div.wrapper header span[aria-label=rating] {
   font-weight: bold;
 }
-#main #containerRestaurants article div.wrapper header span[aria-label=rating] i {
+#main #containerRestaurants article div.wrapper header span[aria-label=rating] i, #main #containerFavoriteRestaurants article div.wrapper header span[aria-label=rating] i {
   color: #FF893B;
 }
 #main #containerRestaurants article div.wrapper header button.add-favorite,
-#main #containerRestaurants article div.wrapper header a.detail {
+#main #containerRestaurants article div.wrapper header a.detail, #main #containerFavoriteRestaurants article div.wrapper header button.add-favorite,
+#main #containerFavoriteRestaurants article div.wrapper header a.detail {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,19 +339,20 @@ ol {
   gap: 4px;
 }
 #main #containerRestaurants article div.wrapper header button.add-favorite i,
-#main #containerRestaurants article div.wrapper header a.detail i {
+#main #containerRestaurants article div.wrapper header a.detail i, #main #containerFavoriteRestaurants article div.wrapper header button.add-favorite i,
+#main #containerFavoriteRestaurants article div.wrapper header a.detail i {
   font-size: 1.4rem;
 }
-#main #containerRestaurants article div.wrapper header button.add-favorite {
+#main #containerRestaurants article div.wrapper header button.add-favorite, #main #containerFavoriteRestaurants article div.wrapper header button.add-favorite {
   transition: 250ms;
 }
-#main #containerRestaurants article div.wrapper header button.add-favorite i.bi-heart-fill {
+#main #containerRestaurants article div.wrapper header button.add-favorite i.bi-heart-fill, #main #containerFavoriteRestaurants article div.wrapper header button.add-favorite i.bi-heart-fill {
   color: #fd79a8;
 }
-#main #containerRestaurants article div.wrapper header a.detail {
+#main #containerRestaurants article div.wrapper header a.detail, #main #containerFavoriteRestaurants article div.wrapper header a.detail {
   color: #3498db;
 }
-#main #containerRestaurants article div.wrapper p.restaurant-description {
+#main #containerRestaurants article div.wrapper p.restaurant-description, #main #containerFavoriteRestaurants article div.wrapper p.restaurant-description {
   color: #222;
   line-height: 150%;
   padding: 1.5rem;
@@ -424,12 +426,10 @@ ol {
   padding: 0.6rem 0;
   font-size: 0.9rem;
   gap: 4px;
+  transition: 250ms;
 }
 #main #containerDetailRestaurant article div.wrapper header button.add-favorite i {
   font-size: 1.4rem;
-}
-#main #containerDetailRestaurant article div.wrapper header button.add-favorite {
-  transition: 250ms;
 }
 #main #containerDetailRestaurant article div.wrapper header button.add-favorite i.bi-heart-fill {
   color: #fd79a8;

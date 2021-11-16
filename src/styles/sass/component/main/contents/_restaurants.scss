@@ -1,4 +1,4 @@
-#containerRestaurants {
+#containerRestaurants, #containerFavoriteRestaurants {
   display: grid;
   @include grid-three-two-one();
   gap: $gap-card;

@@ -18,7 +18,7 @@ const FavoriteRestaurantIdb = {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
 
-  async create(restaurant) {
+  async store(restaurant) {
     return (await dbPromise).add(OBJECT_STORE_NAME, restaurant);
   },
 

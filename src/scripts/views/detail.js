@@ -1,5 +1,5 @@
 import { Mame as $ } from '../lib/Mame';
-import DicodingRestaurantSource from '../data/dicoding-restaurant';
+import DicodingRestaurantSource from '../data/dicoding-restaurant-source';
 import FavoriteButton from '../utils/favorite-button';
 import CreateTemplate from '../templates/template-creator';
 
@@ -18,7 +18,7 @@ class Detail {
     const restaurant = await DicodingRestaurantSource.detail(id);
     const containerRestaurant = $('#containerDetailRestaurant');
 
-    containerRestaurant.innerHTML = CreateTemplate.pageDetail(restaurant);
+    containerRestaurant.innerHTML = CreateTemplate.RestaurantItemDetail(restaurant);
     this.#menuFoods(restaurant);
     this.#menuDrinks(restaurant);
     this.#customerReviews(restaurant);

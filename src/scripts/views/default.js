@@ -1,5 +1,6 @@
+/* eslint-disable no-alert */
 import { Mame as $ } from '../lib/Mame';
-import DicodingRestaurantSource from '../data/dicoding-restaurant';
+import DicodingRestaurantSource from '../data/dicoding-restaurant-source';
 import FavoriteButton from '../utils/favorite-button';
 import CreateTemplate from '../templates/template-creator';
 
@@ -17,17 +18,22 @@ class Default {
   }
 
   static async afterRender() {
-    const restaurants = await DicodingRestaurantSource.getAll();
-    const containerRestaurants = $('#containerRestaurants');
+    try {
+      const restaurants = await DicodingRestaurantSource.getAll();
+      const containerRestaurants = $('#containerRestaurants');
 
-    restaurants.forEach((restaurant) => {
-      containerRestaurants.innerHTML += CreateTemplate.pageDefault(restaurant);
-    });
+      restaurants.forEach((restaurant) => {
+        containerRestaurants.innerHTML += CreateTemplate.RestaurantItems(restaurant);
+      });
 
-    await FavoriteButton.init({
-      buttons: $('.add-favorite'),
-      data: restaurants,
-    });
+      await FavoriteButton.init({
+        buttons: $('.add-favorite'),
+        data: restaurants,
+      });
+    } catch (error) {
+      alert(`${error}, try to refresh page again or check your internet connection`);
+      throw new Error(error);
+    }
   }
 }
 

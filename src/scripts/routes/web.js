@@ -11,6 +11,10 @@ class Web {
     if (isUrl.includes(Routes.detail)) {
       Views.detail(this.#getId());
     }
+
+    if (isUrl.includes(Routes.favorite)) {
+      Views.favorite();
+    }
   }
 
   static #getId() {

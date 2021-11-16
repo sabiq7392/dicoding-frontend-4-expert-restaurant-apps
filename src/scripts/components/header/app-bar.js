@@ -57,11 +57,6 @@ class AppBar extends HTMLElement {
       }
     });
   }
-
-  // #drawerInitiator(container, button) {
-  //   const drawerInitiator = new DrawerInitiator(container, button);
-  //   return drawerInitiator;
-  // }
 }
 
 customElements.define('app-bar', AppBar);

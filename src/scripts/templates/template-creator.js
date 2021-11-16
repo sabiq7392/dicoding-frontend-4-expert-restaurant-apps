@@ -1,7 +1,7 @@
 import CONFIG from '../globals/config';
 
 class CreateTemplate {
-  static pageDefault(restaurant) {
+  static RestaurantItems(restaurant) {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
@@ -41,7 +41,7 @@ class CreateTemplate {
     `;
   }
 
-  static pageDetail(restaurant) {
+  static RestaurantItemDetail(restaurant) {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
