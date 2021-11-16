@@ -4,7 +4,7 @@ import CreateTemplate from '../templates/template-creator';
 
 class FavoriteButton {
   static async init({ buttons, data }) {
-    if (buttons.length > 1) {
+    if (buttons.length > 1 || data.length >= 1) {
       await this.#getAllButton(buttons, data);
     }
 

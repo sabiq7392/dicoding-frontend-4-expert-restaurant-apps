@@ -1,14 +1,16 @@
 /* eslint-disable no-alert */
-import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import { Mame as $ } from '../lib/Mame';
+import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
 import CreateTemplate from '../templates/template-creator';
+import FavoriteButton from '../utils/favorite-button';
 
 class Favorite {
   static async render() {
     return `
       <div id="mainContents">
+        <h1 tabindex="0">Favorite Restaurants</h1>
         <div id="containerFavoriteRestaurants">
-
+          
         </div>
       </div>
     `;
@@ -22,8 +24,12 @@ class Favorite {
       restaurants.forEach((restaurant) => {
         containerRestaurants.innerHTML += CreateTemplate.RestaurantItems(restaurant);
       });
+
+      await FavoriteButton.init({
+        buttons: $('.add-favorite'),
+        data: restaurants,
+      });
     } catch (error) {
-      alert(`${error}, try to refresh page again or check your internet connection`);
       throw new Error(error);
     }
   }

@@ -31,7 +31,7 @@ class Default {
         data: restaurants,
       });
     } catch (error) {
-      alert(`${error}, try to refresh page again or check your internet connection`);
+      alert('try to refresh page again or check your internet connection');
       throw new Error(error);
     }
   }
