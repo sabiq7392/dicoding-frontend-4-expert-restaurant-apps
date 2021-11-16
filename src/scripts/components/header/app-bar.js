@@ -29,7 +29,7 @@ class AppBar extends HTMLElement {
             </a>
           </li>
           <li>
-            <a href="#">Favorite</a>
+            <a href="#favorite">Favorite</a>
           </li>
           <li>
             <a href="https://www.linkedin.com/in/sabiq-muhammad-6b314a210/">

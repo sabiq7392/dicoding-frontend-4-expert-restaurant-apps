@@ -7,8 +7,6 @@ import { Media } from './core/_Media.js';
 import { isObject } from './core/_Type.js';
 
 export function Mame(element) {
-  const anElement = { element };
-
   if (!isObject(element)) {
     const isID = element.includes('#');
     if (isID) {
@@ -17,6 +15,7 @@ export function Mame(element) {
     return document.querySelectorAll(element);
   }
 
+  const anElement = { element };
   return {
     ...Event(anElement),
     ...ClassList(anElement),
