@@ -5,10 +5,12 @@
     li {
       display: grid;
       a {
+        @include place-center(grid);
+        min-height: 44px;
         color: $theme-color-light;
         padding: 0.7rem;
         @include media('phone') {
-          font-size: 12px;
+          font-size: 10px;
         }
         &:hover {
           color: $theme-color-primary;

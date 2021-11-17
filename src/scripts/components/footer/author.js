@@ -21,7 +21,7 @@ class Author extends HTMLElement {
             title="linkedin author"
           >
             <i class="bi bi-linkedin"></i>
-            Sabiq Muhammad
+            <p>Sabiq Muhammad</p>
           </a>
         </li>
         <li>
