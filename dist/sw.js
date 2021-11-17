@@ -12,9 +12,9 @@ var serviceWorkerOption = {
     "/5.bundle.js",
     "/6.bundle.js",
     "/manifest.json",
-    "/images/heros/hero-image_4.jpg",
     "/images/logo/ristorante-icon.svg",
     "/images/logo/ristorante-logo.svg",
+    "/images/heros/hero-image_4.jpg",
     "/ristorante-icon.svg",
     "/index.html"
   ]

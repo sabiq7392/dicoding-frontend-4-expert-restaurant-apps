@@ -28,7 +28,8 @@
 		"no-plusplus": "off",
 		"@babel/no-invalid-this": "error",
     "@babel/no-unused-expressions": "error",
-    "@babel/semi": "error"
+    "@babel/semi": "error",
+		"no-console": "off"
 	},
 	"settings": {
 		"import/extensions": [
