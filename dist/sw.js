@@ -12,9 +12,6 @@ var serviceWorkerOption = {
     "/5.bundle.js",
     "/6.bundle.js",
     "/manifest.json",
-    "/images/logo/ristorante-icon.svg",
-    "/images/logo/ristorante-logo.svg",
-    "/images/heros/hero-image_4.jpg",
     "/images/icons/icon-128x128.png",
     "/images/icons/icon-144x144.png",
     "/images/icons/icon-152x152.png",
@@ -23,6 +20,9 @@ var serviceWorkerOption = {
     "/images/icons/icon-512x512.png",
     "/images/icons/icon-72x72.png",
     "/images/icons/icon-96x96.png",
+    "/images/heros/hero-image_4.jpg",
+    "/images/logo/ristorante-icon.svg",
+    "/images/logo/ristorante-logo.svg",
     "/ristorante-icon.svg",
     "/index.html"
   ]
