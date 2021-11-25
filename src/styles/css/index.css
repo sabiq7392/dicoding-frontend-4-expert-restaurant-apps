@@ -151,6 +151,7 @@ ol {
 }
 #appBar nav .navbar-brand img {
   width: 10rem;
+  height: auto;
 }
 #appBar nav button {
   display: none;
@@ -187,11 +188,11 @@ ol {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-uzm2lm0;
+  animation-name: animation-u7y30oo;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uzm2lm0 {
+@keyframes animation-u7y30oo {
   from {
     right: -300px;
   }
@@ -200,11 +201,11 @@ ol {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-uzm2lm3;
+  animation-name: animation-u7y30pf;
   animation-duration: 500ms;
   animation-iteration-count: 1;
 }
-@keyframes animation-uzm2lm3 {
+@keyframes animation-u7y30pf {
   from {
     right: 0;
   }
@@ -470,12 +471,15 @@ ol {
   display: grid;
 }
 #author ul li a {
+  display: grid;
+  place-items: center;
+  min-height: 44px;
   color: #f1f1f1;
   padding: 0.7rem;
 }
 @media only screen and (max-width: 767px) {
   #author ul li a {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 #author ul li a:hover {

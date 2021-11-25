@@ -1,5 +1,5 @@
 import { Mame as $ } from '../../lib/Mame';
-import logo from '../../../public/images/logo/ristorante-logo.svg';
+import logo from '../../../public/images/logo/ristorante-logo.png';
 import DrawerInitiator from '../../utils/drawer-initiator';
 
 class AppBar extends HTMLElement {
@@ -19,7 +19,10 @@ class AppBar extends HTMLElement {
         <a class="navbar-brand" href="index.html">
           <img src="${logo}" alt="Ristorante">
         </a>
-        <button id="menuButton" aria-label="menu open" type="button">
+        <button 
+          id="menuButton" 
+          aria-label="menu open" 
+          type="button">
           <i class="bi bi-list"></i>
         </button>
         <ul id="menuContainer">

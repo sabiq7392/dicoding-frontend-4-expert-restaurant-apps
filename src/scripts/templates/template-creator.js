@@ -5,7 +5,7 @@ class CreateTemplate {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
-          src="${CONFIG.IMG_URL.LARGE}/${restaurant.pictureId}" 
+          src="${CONFIG.IMG_URL.SMALL}/${restaurant.pictureId}" 
           alt="${restaurant.name}" 
           class="restaurant-picture">
         <div class="wrapper">
@@ -45,7 +45,7 @@ class CreateTemplate {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <img 
-          src="${CONFIG.IMG_URL.LARGE}/${restaurant.pictureId}" 
+          src="${CONFIG.IMG_URL.SMALL}/${restaurant.pictureId}" 
           alt="${restaurant.name}" 
           class="restaurant-picture">
         <div class="wrapper">

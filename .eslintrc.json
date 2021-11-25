@@ -29,7 +29,9 @@
 		"@babel/no-invalid-this": "error",
     "@babel/no-unused-expressions": "error",
     "@babel/semi": "error",
-		"no-console": "off"
+		"no-console": "off",
+		"linebreak-style": "off",
+		"global-require": "off"
 	},
 	"settings": {
 		"import/extensions": [

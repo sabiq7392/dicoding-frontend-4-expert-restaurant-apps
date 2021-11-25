@@ -7,7 +7,9 @@
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "sass": "sass --watch src/styles/sass:src/styles/css",
-    "test": "karma start"
+    "test": "karma start",
+    "audit": "lighthouse http://localhost:8080/ --view",
+    "build-image": "node src/scripts/utils/sharp.js"
   },
   "keywords": [],
   "author": "Sabiq Muhammad sabiqmuhammad98@gmail.com",
@@ -21,6 +23,7 @@
     "@babel/plugin-proposal-private-methods": "^7.16.0",
     "@babel/preset-env": "^7.16.0",
     "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^6.0.3",
     "css-loader": "^3.6.0",
     "eslint": "^8.2.0",
@@ -37,10 +40,12 @@
     "karma-jasmine": "^3.3.1",
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^4.0.2",
-    "sass": "^1.22.10",
+    "lighthouse": "^9.1.0",
+    "sass": "^1.43.5",
     "sass-loader": "^7.2.0",
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
+    "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0",
     "webpack-merge": "^5.0.9",
@@ -52,6 +57,7 @@
     "idb": "^6.1.5",
     "regenerator-runtime": "^0.13.5",
     "serviceworker-webpack-plugin": "^1.0.1",
+    "sharp": "^0.29.3",
     "url-loader": "^4.1.1"
   }
 }

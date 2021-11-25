@@ -1,4 +1,5 @@
-import heroImage from '../../../public/images/heros/hero-image_4.jpg';
+import heroImageLarge from '../../../public/images/heros/hero-image_4-large.jpg';
+import heroImageSmall from '../../../public/images/heros/hero-image_4-small.jpg';
 
 class Hero extends HTMLElement {
   connectedCallback() {
@@ -8,7 +9,10 @@ class Hero extends HTMLElement {
   #render() {
     this.innerHTML = `
       <div>
-        <img src="${heroImage}" alt="sweet peanut cookies">
+        <picture>
+          <source media="(max-width: 767px)" srcset="${heroImageSmall}">
+          <img src="${heroImageLarge}" alt="sweet peanut cookies">
+        </picture>
       </div>
     `;
   }

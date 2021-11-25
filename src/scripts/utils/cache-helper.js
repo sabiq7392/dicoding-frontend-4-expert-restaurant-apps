@@ -39,7 +39,7 @@ class CacheHelper {
 
   static async #addCache(request) {
     const cache = await this.#openCache();
-    cache.add(request);
+    return cache.add(request);
   }
 }
 
