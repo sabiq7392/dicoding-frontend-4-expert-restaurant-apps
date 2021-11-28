@@ -1,5 +1,5 @@
 import { Mame as $ } from '../../lib/Mame';
-import logo from '../../../public/images/logo/ristorante-logo.png';
+import logo from '../../../public/images/logo/ristorante-logo.svg';
 import DrawerInitiator from '../../utils/drawer-initiator';
 
 class AppBar extends HTMLElement {

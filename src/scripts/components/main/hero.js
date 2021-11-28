@@ -1,17 +1,35 @@
-import heroImageLarge from '../../../public/images/heros/hero-image_4-large.jpg';
-import heroImageSmall from '../../../public/images/heros/hero-image_4-small.jpg';
-
 class Hero extends HTMLElement {
   connectedCallback() {
+    this.imgdesktop = this.getAttribute('imgdesktop') || null;
     this.#render();
   }
 
   #render() {
     this.innerHTML = `
-      <div>
+      <div class="skeleton-hero">
         <picture>
-          <source media="(max-width: 767px)" srcset="${heroImageSmall}">
-          <img src="${heroImageLarge}" alt="sweet peanut cookies">
+          <source 
+            type="image/webp" 
+            media="(max-width: 767px)"
+            srcset="images/heros/hero-image_4-small.webp">
+          </source>
+          <source 
+            type="image/jpeg" 
+            media="(max-width: 767px)" 
+            srcset="images/heros/hero-image_4-small.jpg">
+          </source>
+          <source 
+            type="image/webp" 
+            srcset="images/heros/hero-image_4-large.webp">
+          </source>
+          <source 
+            type="image/jpeg" 
+            srcset="images/heros/hero-image_4-large.jpg">
+          </source>
+          <img 
+            src="images/heros/hero-image_4-large.jpg" 
+            alt="sweet peanut cookies">
+          </img>
         </picture>
       </div>
     `;

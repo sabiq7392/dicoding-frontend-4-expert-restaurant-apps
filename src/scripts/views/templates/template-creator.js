@@ -1,16 +1,21 @@
-import CONFIG from '../globals/config';
+import CONFIG from '../../globals/config';
 
 class CreateTemplate {
   static RestaurantItems(restaurant) {
     return `
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
-        <img 
-          src="${CONFIG.IMG_URL.SMALL}/${restaurant.pictureId}" 
-          alt="${restaurant.name}" 
-          class="restaurant-picture">
+        <div class="skeleton-img">
+          <img 
+            src="${CONFIG.IMG_URL.SMALL}/${restaurant.pictureId}" 
+            alt="${restaurant.name}" 
+            class="restaurant-picture">
+          </img>
+        </div>
         <div class="wrapper">
           <header>
-            <h2 class="restaurant-name" tabindex="0">${restaurant.name}</h2>
+            <div class="skeleton-title">
+              <h2 class="restaurant-name" tabindex="0">${restaurant.name}</h2>
+            </div>
             <div class="d-flex gap-md align-items-center">
               <span aria-label="rating" tabindex="0">
                 <i class="bi bi-star-fill"></i> 
@@ -110,14 +115,14 @@ class CreateTemplate {
     `;
   }
 
-  static buttonFavorite() {
+  static buttonNotFavorite() {
     return `
       <i class="icon-favorite bi bi-heart"></i> 
       <span class="text-favorite">Add to Favorite</span>
     `;
   }
 
-  static buttonFavorited() {
+  static buttonFavorite() {
     return `
       <i class="icon-favorite bi bi-heart-fill"></i> 
       <span class="text-favorite">Added to Favorite</span>

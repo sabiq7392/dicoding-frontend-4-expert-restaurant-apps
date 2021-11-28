@@ -2,7 +2,7 @@
 import { Mame as $ } from '../lib/Mame';
 import DicodingRestaurantSource from '../data/dicoding-restaurant-source';
 import FavoriteButton from '../utils/favorite-button';
-import CreateTemplate from '../templates/template-creator';
+import CreateTemplate from './templates/template-creator';
 
 class Detail {
   static async render() {
@@ -21,9 +21,9 @@ class Detail {
       const containerRestaurant = $('#containerDetailRestaurant');
 
       containerRestaurant.innerHTML = CreateTemplate.RestaurantItemDetail(restaurant);
-      this.#menuFoods(restaurant);
-      this.#menuDrinks(restaurant);
-      this.#customerReviews(restaurant);
+      await this.#menuFoods(restaurant);
+      await this.#menuDrinks(restaurant);
+      await this.#customerReviews(restaurant);
 
       await FavoriteButton.init({
         buttons: $('.add-favorite'),
@@ -35,21 +35,21 @@ class Detail {
     }
   }
 
-  static #menuFoods(restaurant) {
+  static async #menuFoods(restaurant) {
     const restaurantMenuFoods = $('#restaurantMenuFoods');
     restaurant.menus.foods.forEach((food) => {
       restaurantMenuFoods.innerHTML += `<li tabindex="0">${food.name}</li>`;
     });
   }
 
-  static #menuDrinks(restaurant) {
+  static async #menuDrinks(restaurant) {
     const restaurantMenuDrinks = $('#restaurantMenuDrinks');
     restaurant.menus.drinks.forEach((drink) => {
       restaurantMenuDrinks.innerHTML += `<li tabindex="0">${drink.name}</li>`;
     });
   }
 
-  static #customerReviews(restaurant) {
+  static async #customerReviews(restaurant) {
     const restaurantCustomerReviews = $('#restaurantCustomerReviews');
     restaurant.customerReviews.forEach((customerReview) => {
       restaurantCustomerReviews.innerHTML += `

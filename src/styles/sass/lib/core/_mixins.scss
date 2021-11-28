@@ -1,105 +1,17 @@
 @import 'media';
-
-@mixin container() {
-  margin: auto;
-  width: 100%;
-  @include media('small') {
-    max-width: 100%;
-  }
-  @include media('medium') {
-    max-width: 720px;
-  }
-  @include media('large') {
-    max-width: 960px;
-  }
-  @include media('x-large') {
-    max-width: 1140px;
-  }
-  @include media('xx-large') {
-    max-width: 1320px;
-  }
-}
-
-@mixin container-fluid() {
-  max-width: 100%;
-}
-
-@mixin grid-three-two-one() {
-  grid-template-columns: repeat(3, 1fr);
-  @include media('tablet') {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @include media('phone') {
-    grid-template-columns: 1fr;
-  }
-}
+@import 'mixins/mx_animations';
+@import 'mixins/mx_container';
+@import 'mixins/mx_grid';
+@import 'mixins/mx_nav';
+@import 'mixins/mx_place';
+@import 'mixins/mx_styles_default';
 
 @mixin link-active() {
   color: $theme-color-active;
   font-weight: bold;
 }
 
-@mixin navbar-top-fixed() {
-  position: fixed;
-  width: 100%;
-  top: 0;
-}
 
-@mixin navbar-top-sticky() {
-  position: sticky;
-  top: 0;
-}
 
-@mixin place-center($display) {
-  display: $display;
-  @if $display == grid {
-    place-items: center;
-  }
-  @else if $display == flex {
-    justify-content: center;
-    align-items: center;
-  }
-}
 
-@mixin place-vertical-center($display) {
-  display: $display;
-  align-items: center;
-}
-
-@mixin place-horizontal-between($display) {
-  display: $display;
-  justify-content: space-between;
-}
-
-@mixin place-horizontal-center($display) {
-  display: $display;
-  justify-content: center;
-}
-
-@mixin styles-default-add-custom-tag() {
-  display: block;
-}
-
-@mixin styles-default-reset-tag-all() {
-  *, *::before, *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  button {
-    background-color: rgba($color: #000000, $alpha: 0);
-    border: none;
-  }
-}
 

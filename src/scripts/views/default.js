@@ -2,14 +2,17 @@
 import { Mame as $ } from '../lib/Mame';
 import DicodingRestaurantSource from '../data/dicoding-restaurant-source';
 import FavoriteButton from '../utils/favorite-button';
-import CreateTemplate from '../templates/template-creator';
+import CreateTemplate from './templates/template-creator';
 
 class Default {
   static async render() {
     return `
       <hero-element id="hero"></hero-element>
+      
       <div id="mainContents">
-        <h1 tabindex="0">Explore Restaurants</h1>
+        <div class="skeleton">
+          <h1 tabindex="0">Explore Restaurants</h1>
+        </div>
         <div id="containerRestaurants">
 
         </div>
@@ -22,7 +25,7 @@ class Default {
       const restaurants = await DicodingRestaurantSource.getAll();
       const containerRestaurants = $('#containerRestaurants');
 
-      restaurants.forEach((restaurant) => {
+      await restaurants.forEach((restaurant) => {
         containerRestaurants.innerHTML += CreateTemplate.RestaurantItems(restaurant);
       });
 

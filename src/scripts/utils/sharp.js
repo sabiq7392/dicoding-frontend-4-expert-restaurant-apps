@@ -3,7 +3,12 @@ const fs = require('fs');
 const path = require('path');
 
 const target = path.resolve('./src/public/images/heros');
+// const destination = path.resolve('./dist/images/heros');
 const destination = target;
+
+// if (!fs.existsSync(destination)) {
+//   fs.mkdirSync(destination);
+// }
 
 fs.readdirSync(target)
   .forEach((image) => {

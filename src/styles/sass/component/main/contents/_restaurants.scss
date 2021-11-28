@@ -6,16 +6,22 @@
     $border-radius: calc(#{$border-radius-card-image} - 2px);
     @include article();
     img {
-      @include img($height: 250px)
+      @include img($height: 250px);
     }
-
     div.wrapper {
       @include wrapper($border-radius);
       header {
+        display: grid;
+        grid-template-rows: 40px;
         border-bottom: 1px solid gainsboro;
         padding: $padding-small $padding-large;
         h2, span {
           color: $theme-color-dark-text-title;
+        }
+
+        h2 {
+          height: 100%;
+          background-color: white
         }
 
         span[aria-label="rating"] {

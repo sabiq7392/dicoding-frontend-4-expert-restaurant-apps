@@ -23,6 +23,66 @@
   gap: 1rem;
 }
 
+.skeleton-hero {
+  height: 70vh;
+  animation-name: animation-u9070cw;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: linear;
+  animation-play-state: running;
+}
+@keyframes animation-u9070cw {
+  from {
+    background-color: #cacaca;
+  }
+  to {
+    background-color: rgba(231, 231, 231, 0.933);
+  }
+}
+
+.skeleton-title {
+  height: 40px;
+  animation-name: animation-u9070d9;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: linear;
+  animation-play-state: running;
+}
+@keyframes animation-u9070d9 {
+  from {
+    background-color: #cacaca;
+  }
+  to {
+    background-color: rgba(231, 231, 231, 0.933);
+  }
+}
+
+.skeleton-img {
+  height: 250px;
+  animation-name: animation-u9070dn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-fill-mode: linear;
+  animation-play-state: running;
+}
+@keyframes animation-u9070dn {
+  from {
+    background-color: #cacaca;
+  }
+  to {
+    background-color: rgba(231, 231, 231, 0.933);
+  }
+}
+
 /*
   Mame.scss
   Make your code simple, readble and easy to maintain
@@ -188,11 +248,16 @@ ol {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-u7y30oo;
+  animation-name: animation-u9070eh;
   animation-duration: 500ms;
+  animation-timing-function: 1;
+  animation-delay: 0s;
   animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
 }
-@keyframes animation-u7y30oo {
+@keyframes animation-u9070eh {
   from {
     right: -300px;
   }
@@ -201,11 +266,16 @@ ol {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-u7y30pf;
+  animation-name: animation-u9070en;
   animation-duration: 500ms;
+  animation-timing-function: 1;
+  animation-delay: 0s;
   animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none;
+  animation-play-state: running;
 }
-@keyframes animation-u7y30pf {
+@keyframes animation-u9070en {
   from {
     right: 0;
   }
@@ -237,9 +307,11 @@ ol {
   }
 }
 
+#main {
+  min-height: 100vh;
+}
 #main #hero {
   min-width: 100vw;
-  height: 100vh;
 }
 #main #hero img {
   display: block;
@@ -282,6 +354,7 @@ ol {
 }
 #main #mainContents h1 {
   text-align: center;
+  background-color: #f1f1f1;
 }
 #main #containerRestaurants, #main #containerFavoriteRestaurants {
   display: grid;
@@ -317,11 +390,17 @@ ol {
   transition: 500ms;
 }
 #main #containerRestaurants article div.wrapper header, #main #containerFavoriteRestaurants article div.wrapper header {
+  display: grid;
+  grid-template-rows: 40px;
   border-bottom: 1px solid gainsboro;
   padding: 0.5rem 1.5rem;
 }
 #main #containerRestaurants article div.wrapper header h2, #main #containerRestaurants article div.wrapper header span, #main #containerFavoriteRestaurants article div.wrapper header h2, #main #containerFavoriteRestaurants article div.wrapper header span {
   color: #444;
+}
+#main #containerRestaurants article div.wrapper header h2, #main #containerFavoriteRestaurants article div.wrapper header h2 {
+  height: 100%;
+  background-color: white;
 }
 #main #containerRestaurants article div.wrapper header span[aria-label=rating], #main #containerFavoriteRestaurants article div.wrapper header span[aria-label=rating] {
   font-weight: bold;

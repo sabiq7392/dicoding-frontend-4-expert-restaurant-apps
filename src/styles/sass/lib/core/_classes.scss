@@ -9,3 +9,18 @@
 .d-grid { display: grid; }
 
 .gap-md { gap: $gap-medium; }
+
+.skeleton-hero {
+  height: 70vh;
+  @include animation-skeleton();
+}
+
+.skeleton-title {
+  height: 40px;
+  @include animation-skeleton();
+}
+
+.skeleton-img {
+  height: 250px;
+  @include animation-skeleton();
+}

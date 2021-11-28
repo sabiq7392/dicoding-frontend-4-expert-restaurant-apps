@@ -1,7 +1,7 @@
 /* eslint-disable no-alert */
 import { Mame as $ } from '../lib/Mame';
 import FavoriteRestaurantIdb from '../data/favorite-restaurant-idb';
-import CreateTemplate from '../templates/template-creator';
+import CreateTemplate from './templates/template-creator';
 import FavoriteButton from '../utils/favorite-button';
 
 class Favorite {
