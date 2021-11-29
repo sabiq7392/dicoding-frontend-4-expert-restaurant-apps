@@ -23,7 +23,7 @@ class CreateTemplate {
               </span>
               <button 
                 class="add-favorite" 
-                aria-label="add to favorite" 
+                aria-label="Add to Favorite" 
                 type="button">
                 <i class="icon-favorite bi bi-heart"></i> 
                 <span class="text-favorite">Add to Favorite</span>
@@ -63,7 +63,7 @@ class CreateTemplate {
               </span>
               <button
                 class="add-favorite" 
-                aria-label="add to favorite" 
+                aria-label="Add to Favorite" 
                 type="button">
                 <i class="icon-favorite bi bi-heart"></i> 
                 <span class="text-favorite">Add to Favorite</span>

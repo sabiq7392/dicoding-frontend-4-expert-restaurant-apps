@@ -54,7 +54,7 @@ class FavoriteButton {
   }
 
   static _renderNotFavorite(button) {
-    button.setAttribute('aria-label', 'Add to favorite');
+    button.setAttribute('aria-label', 'Add to Favorite');
     button.innerHTML = CreateTemplate.buttonNotFavorite();
   }
 

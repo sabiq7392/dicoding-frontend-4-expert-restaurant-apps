@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import DicodingRestaurantSource from '../src/scripts/data/dicoding-restaurant-source';
 import FavoriteRestaurantIdb from '../src/scripts/data/favorite-restaurant-idb';
-import FavoriteButton from '../src/scripts/utils/favorite-button';
 import CreateTemplate from '../src/scripts/views/templates/template-creator';
 import * as TestFactories from './helpers/TestFactories';
 
