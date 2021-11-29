@@ -1,4 +1,6 @@
 import CONFIG from '../../globals/config';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 class CreateTemplate {
   static RestaurantItems(restaurant) {
@@ -6,9 +8,9 @@ class CreateTemplate {
       <article id="${restaurant.id}" class="restaurant" tabindex="0">
         <div class="skeleton-img">
           <img 
-            src="${CONFIG.IMG_URL.SMALL}/${restaurant.pictureId}" 
+            data-src="${CONFIG.IMG_URL.SMALL}/${restaurant.pictureId}" 
             alt="${restaurant.name}" 
-            class="restaurant-picture">
+            class="restaurant-picture lazyload">
           </img>
         </div>
         <div class="wrapper">

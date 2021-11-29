@@ -25,7 +25,7 @@
 
 .skeleton-hero {
   height: 70vh;
-  animation-name: animation-u9070cw;
+  animation-name: animation-u9070fc;
   animation-duration: 2s;
   animation-timing-function: ease;
   animation-delay: 0s;
@@ -34,7 +34,7 @@
   animation-fill-mode: linear;
   animation-play-state: running;
 }
-@keyframes animation-u9070cw {
+@keyframes animation-u9070fc {
   from {
     background-color: #cacaca;
   }
@@ -45,7 +45,7 @@
 
 .skeleton-title {
   height: 40px;
-  animation-name: animation-u9070d9;
+  animation-name: animation-u9070fo;
   animation-duration: 2s;
   animation-timing-function: ease;
   animation-delay: 0s;
@@ -54,7 +54,7 @@
   animation-fill-mode: linear;
   animation-play-state: running;
 }
-@keyframes animation-u9070d9 {
+@keyframes animation-u9070fo {
   from {
     background-color: #cacaca;
   }
@@ -65,7 +65,7 @@
 
 .skeleton-img {
   height: 250px;
-  animation-name: animation-u9070dn;
+  animation-name: animation-u9070gc;
   animation-duration: 2s;
   animation-timing-function: ease;
   animation-delay: 0s;
@@ -74,7 +74,7 @@
   animation-fill-mode: linear;
   animation-play-state: running;
 }
-@keyframes animation-u9070dn {
+@keyframes animation-u9070gc {
   from {
     background-color: #cacaca;
   }
@@ -211,7 +211,7 @@ ol {
 }
 #appBar nav .navbar-brand img {
   width: 10rem;
-  height: auto;
+  height: 50px;
 }
 #appBar nav button {
   display: none;
@@ -248,7 +248,7 @@ ol {
   width: 200px;
 }
 #appBar nav ul.show-animation {
-  animation-name: animation-u9070eh;
+  animation-name: animation-u9070hb;
   animation-duration: 500ms;
   animation-timing-function: 1;
   animation-delay: 0s;
@@ -257,7 +257,7 @@ ol {
   animation-fill-mode: none;
   animation-play-state: running;
 }
-@keyframes animation-u9070eh {
+@keyframes animation-u9070hb {
   from {
     right: -300px;
   }
@@ -266,7 +266,7 @@ ol {
   }
 }
 #appBar nav ul.hide-animation {
-  animation-name: animation-u9070en;
+  animation-name: animation-u9070i2;
   animation-duration: 500ms;
   animation-timing-function: 1;
   animation-delay: 0s;
@@ -275,7 +275,7 @@ ol {
   animation-fill-mode: none;
   animation-play-state: running;
 }
-@keyframes animation-u9070en {
+@keyframes animation-u9070i2 {
   from {
     right: 0;
   }
