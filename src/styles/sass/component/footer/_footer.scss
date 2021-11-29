@@ -1,7 +1,0 @@
-#footer {
-  @include place-center(grid);
-  background-color: $theme-color-dark;
-  padding: $padding-medium;
-}
-
-@import 'author';
