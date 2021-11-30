@@ -39,11 +39,11 @@ describe('adding favorite restaurant', () => {
     FavoriteRestaurantIdb.destroy('rqdv5juczeskfw1e867');
   });
 
-  xit('should not add a restaurant it has no id', async () => {
+  it('should not add a restaurant it has no id', async () => {
     await TestFactories
       .createFavoriteButtonPresenterWithRestaurant({ });
 
-    document.querySelector('#likeBUtton').dispatchEvent(new Event('click'));
+    document.querySelector('.add-favorite').dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurantIdb.getAll()).toEqual([]);
   });

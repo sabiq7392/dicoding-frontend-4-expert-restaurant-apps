@@ -21,6 +21,10 @@ class Favorite {
       const restaurants = await FavoriteRestaurantIdb.getAll();
       const containerRestaurants = $('#containerFavoriteRestaurants');
 
+      if (restaurants.length === 0) {
+        containerRestaurants.innerHTML += '<h2>No Favorite Restaurant</h2>';
+      }
+
       restaurants.forEach((restaurant) => {
         containerRestaurants.innerHTML += CreateTemplate.RestaurantItems(restaurant);
       });

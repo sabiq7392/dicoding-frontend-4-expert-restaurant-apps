@@ -2,7 +2,7 @@
 Feature('Favorite Restaurants');
 
 Before(({ I }) => {
-  I.amOnPage('/');
+  I.amOnPage('/#favorite');
 });
 
 Scenario('test something', ({ I }) => {
@@ -10,6 +10,9 @@ Scenario('test something', ({ I }) => {
   const isFavorite = '[aria-label="Added to Favorite"]';
   const isNotYetFavorite = '[aria-label="Add to Favorite"]';
 
+  I.see('No Favorite Restaurant', 'h2');
+
+  I.amOnPage('/');
   I.seeElement(restaurantContainer);
 
   I.seeElement(isNotYetFavorite);
@@ -18,5 +21,7 @@ Scenario('test something', ({ I }) => {
   I.seeElement(isFavorite);
   I.click(isFavorite);
 
-  I.seeElement(isNotYetFavorite);
+  I.amOnPage('/#favorite');
+
+  I.seeElement(restaurantContainer);
 });
