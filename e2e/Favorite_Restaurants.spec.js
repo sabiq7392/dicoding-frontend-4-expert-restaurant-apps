@@ -5,7 +5,7 @@ Before(({ I }) => {
   I.amOnPage('/#favorite');
 });
 
-Scenario('test something', ({ I }) => {
+Scenario('test remove and add favorite restaurant in list', ({ I }) => {
   const restaurantContainer = '.restaurant';
   const isFavorite = '[aria-label="Added to Favorite"]';
   const isNotYetFavorite = '[aria-label="Add to Favorite"]';
