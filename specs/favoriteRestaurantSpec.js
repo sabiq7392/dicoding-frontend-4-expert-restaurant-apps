@@ -17,7 +17,7 @@ describe('adding favorite restaurant', () => {
     await TestFactories
       .createFavoriteButtonPresenterWithRestaurant({ id: 'rqdv5juczeskfw1e867' });
 
-    expect(document.querySelector('[aria-label="add to favorite"]')).toBeTruthy();
+    expect(document.querySelector('[aria-label="Add to Favorite"]')).toBeTruthy();
   });
 
   it('should not show the added to favorite button when the restaurant has not been favorited before', async () => {
